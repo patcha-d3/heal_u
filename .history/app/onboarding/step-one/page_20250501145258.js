@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Button from "../../../ui/Button/Button";
+import Button from "../../ui/Button/Button";
 
 export default function StepOnePage() {
 	const handleClick = () => {

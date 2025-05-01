@@ -11,7 +11,7 @@ const Button = ({
 	type = "button",
 }) => {
 	const classNames = [
-		styles.button,
+		styles.butto,
 		fullWidth && styles.fullWidth,
 		outlined && styles.outlined,
 		disabled && styles.disabled,
