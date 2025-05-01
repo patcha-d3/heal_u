@@ -34,12 +34,12 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning
       >
         <div className="min-h-screen w-full flex items-center justify-center bg-gray-100">
-          <div className="w-[440px] h-[956px] bg-white shadow-lg relative overflow-hidden flex flex-col">
+          <div className="w-[440px] h-[956px] bg-white shadow-lg relative overflow-hidden">
             <TopNav />
-            <main className="flex-1 overflow-y-auto">{children}</main>
-            <div className="absolute bottom-0 left-0 right-0">
-              <Bottomnav />
-            </div>
+            <main className="h-[calc(956px-120px)] overflow-y-auto">
+              {children}
+            </main>
+            <Bottomnav />
           </div>
         </div>
       </body>
