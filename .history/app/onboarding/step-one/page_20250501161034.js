@@ -14,7 +14,7 @@ export default function StepOnePage() {
 				<h1>Onboarding Step 1</h1>
 			</div>
 
-			<div className='flex justify-center pb-12'>
+			<div className='flex justify-center pb-48'>
 				<Button
 					text='Button'
 					onClick={handleClick}
