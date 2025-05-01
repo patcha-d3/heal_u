@@ -5,11 +5,11 @@ import Button from "../ui/Button";
 
 export default function HomePage() {
 	const handleClick = () => {
-		alert("You clicked the Button!");
+		alert("You clicked the Butto!");
 	};
 
 	return (
-		<main>
+		<main style={{ padding: "2rem" }}>
 			<h1>Welcome to the Home Page</h1>
 
 			<Button
@@ -20,7 +20,7 @@ export default function HomePage() {
 				outlined={true}
 			/>
 
-			<div>
+			<div style={{ marginTop: "2rem" }}>
 				<Button
 					text='Disabled Button'
 					onClick={() => {}}
