@@ -15,7 +15,7 @@ export default function StepOnePage() {
 			</div>
 
 			<div className='flex flex-col items-center pb-12'>
-				<p className='text-[14px] font-normal text-gray-600 mb-2 text-center'>
+				<p className='text-sm text-gray-600 mb-2 text-center'>
 					*All questions must be answered to
 					receive a tailored plan.
 				</p>
