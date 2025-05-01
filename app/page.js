@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Button from "../ui/Button/Button";
+import SmallButton from '../ui/Button-s';
 
 export default function RootPage() {
 	return (
@@ -20,4 +21,13 @@ export default function RootPage() {
 			</Link>
 		</main>
 	);
+}
+
+export default function Home() {
+  return (
+    <div>
+      <h1>Tooltip Button Example</h1>
+      <SmallButton onClick={() => alert('Help info')} tooltip="Need help?" />
+    </div>
+  );
 }
