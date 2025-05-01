@@ -27,20 +27,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-<<<<<<< HEAD
-	return (
-		<html lang='en'>
-			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-				suppressHydrationWarning
-			>
-				<TopNav />
-				{children}
-				<Bottomnav />
-			</body>
-		</html>
-	);
-=======
   return (
     <html lang="en">
       <body
@@ -52,5 +38,4 @@ export default function RootLayout({ children }) {
       </body>
     </html>
   );
->>>>>>> 6117707418367c13788989d66aca9f2aa80e19ce
 }

@@ -22,35 +22,23 @@ const roboto = Roboto({
 });
 
 export const metadata = {
+ui-bottomnav
   title: "Heal U",
   description: "Mental health companion app",
 };
 
 export default function RootLayout({ children }) {
-<<<<<<< HEAD
 	return (
 		<html lang='en'>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-				suppressHydrationWarning
 			>
+
 				<TopNav />
 				{children}
 				<Bottomnav />
+
 			</body>
 		</html>
 	);
-=======
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <TopNav />
-        {children}
-        <Bottomnav />
-      </body>
-    </html>
-  );
->>>>>>> 6117707418367c13788989d66aca9f2aa80e19ce
 }
