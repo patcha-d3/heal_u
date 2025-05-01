@@ -14,11 +14,7 @@ export default function StepOnePage() {
 				<h1>Onboarding Step 1</h1>
 			</div>
 
-			<div className='flex flex-col items-center mb-12'>
-				<p className='text-[14px] font-normal text-gray-600 mb-2 text-center'>
-					*All questions must be answered to
-					receive a tailored plan.
-				</p>
+			<div className='flex justify-center pb-12'>
 				<Button
 					text='Start Diagnosis'
 					onClick={handleClick}

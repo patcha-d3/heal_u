@@ -24,6 +24,11 @@ const roboto = Roboto({
 	display: "swap",
 });
 
+export const metadata = {
+	title: "Heal U",
+	description: "Mental health companion app",
+};
+
 export default function RootLayout({ children }) {
 	const pathname = usePathname();
 	const showBottomNav = !pathname?.includes("/onboarding");
