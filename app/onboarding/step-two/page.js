@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import ButtonSurvey from "../../../ui/Button-survey/Button-survey";
 import Image from "next/image";
-import ExitChip from "../../../ui/ExitChip/Exitchip";
+import ExitChip from "../../../ui/Exitchip/Exitchip";
 
 export default function RootPage() {
   const [selected, setSelected] = useState(null);
