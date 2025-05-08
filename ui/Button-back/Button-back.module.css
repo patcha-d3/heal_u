@@ -8,3 +8,12 @@
     align-items: center;
     justify-content: center;
   }
+  
+  .arrowImage {
+    width: 52px;
+    height: 40px;
+    transition: filter 0.2s;
+  }
+  .backButton:hover .arrowImage {
+    filter: brightness(0.8);
+  }
