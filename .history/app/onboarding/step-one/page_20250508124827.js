@@ -3,7 +3,7 @@
 import React from "react";
 import Button from "../../../ui/Button/Button";
 import SmallButton from "../../../ui/Tooltip/Tooltip";
-import Skipchip from "../../../ui/Skipchip/Skipchip";
+import SkipChip from "../../../ui/SkipChip/SkipChip";
 
 export default function StepOnePage() {
 	const handleClick = () => {
@@ -19,7 +19,7 @@ export default function StepOnePage() {
 				/>
 			</div>
 			<div className='absolute top-5 right-[22px]'>
-				<Skipchip
+				<SkipChip
 					onClick={() => alert("Skipping...")}
 				/>
 			</div>

@@ -1,0 +1,25 @@
+.skipchip {
+	width: 80px;
+	height: 40px;
+	border-radius: 24px;
+	background-color: #f0edfc;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	border: none;
+	outline: none;
+}
+
+.skipchip:hover {
+	background-color: #e5e0f9;
+}
+
+.text {
+	font-family: "Roboto", sans-serif;
+	font-weight: 700;
+	font-size: 16px;
+	color: #2e2e30;
+	pointer-events: none;
+}
