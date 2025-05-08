@@ -10,14 +10,11 @@ export default function TopNav() {
 	return (
 		<header
 			className={styles.topBar}
-			style={{
-				borderBottom:
-					"1px solid rgba(255, 255, 255, 0.5)",
-			}}
+			style={{ borderBottom: "1px solid #FFFFFF" }}
 		>
 			<a href='/' className={styles.logoContainer}>
 				<img
-					src='/assets/logo.png'
+					src='/logo.png'
 					alt='Logo'
 					className={styles.logoImg}
 				/>
@@ -42,7 +39,7 @@ export default function TopNav() {
 						</div>
 					)}
 					<img
-						src='/assets/search.png'
+						src='/search.png'
 						alt='Search'
 						className={`${styles.iconImg} ${
 							showSearch
@@ -61,8 +58,8 @@ export default function TopNav() {
 					<img
 						src={
 							hasNotification
-								? "/assets/avatar-notification.png"
-								: "/assets/avatar.png"
+								? "/avatar-notification.png"
+								: "/avatar.png"
 						}
 						alt='Avatar'
 						className={styles.avatarImg}

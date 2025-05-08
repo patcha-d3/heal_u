@@ -1,14 +1,15 @@
 import React from "react";
 import styles from "./Button.module.css";
 
-export default function Button({
+const Button = ({
 	text,
 	onClick,
+	icon,
 	fullWidth = false,
 	outlined = false,
 	disabled = false,
 	type = "button",
-}) {
+}) => {
 	const buttonClass = outlined
 		? styles.outlinedButton
 		: styles.filledButton;
@@ -23,6 +24,9 @@ export default function Button({
 			className={`${buttonClass} ${widthClass} ${disabledClass}`}
 		>
 			<span className={styles.text}>{text}</span>
+			{icon && <span className={styles.icon}>{icon}</span>}
 		</button>
 	);
-}
+};
+
+export default Button;

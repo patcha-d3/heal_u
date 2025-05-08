@@ -1,4 +1,4 @@
-.filledButton {
+.healu-button {
 	position: relative;
 	display: flex;
 	align-items: center;
@@ -12,67 +12,51 @@
 	line-height: 24px;
 	transition: all 0.3s ease;
 	cursor: pointer;
+}
+
+.healu-button--filled {
 	background-color: #29424d;
 	border: 1px solid black;
 	color: white;
-	z-index: 1;
-	pointer-events: auto;
 }
 
-.filledButton:hover {
+.healu-button--filled:hover:not(.healu-button--disabled) {
 	background-color: #cdf06b;
 	color: black;
 	transform: translateY(-1px);
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.outlinedButton {
-	position: relative;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 48px;
-	min-width: 200px;
-	border-radius: 24px;
-	padding: 0 12px;
-	font-family: "Roboto", sans-serif;
-	font-size: 16px;
-	line-height: 24px;
-	transition: all 0.3s ease;
-	cursor: pointer;
+.healu-button--outlined {
 	background-color: transparent;
 	border: 1px solid #2e2e30;
 	color: #2e2e30;
-	z-index: 1;
-	pointer-events: auto;
 }
 
-.outlinedButton:hover {
+.healu-button--outlined:hover:not(.healu-button--disabled) {
 	background-color: #cdf06b;
 	color: #29424d;
 	transform: translateY(-1px);
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.fullWidth {
+.healu-button--fullWidth {
 	width: 100%;
 }
 
-.text {
+.healu-button__text {
 	flex: 1;
 	text-align: center;
-	pointer-events: none;
 }
 
-.icon {
+.healu-button__icon {
 	position: absolute;
 	right: 12px;
 	display: flex;
 	align-items: center;
-	pointer-events: none;
 }
 
-.disabled {
+.healu-button--disabled {
 	opacity: 0.5;
 	cursor: not-allowed;
 	pointer-events: none;

@@ -17,7 +17,7 @@ export default function TopNav() {
 		>
 			<a href='/' className={styles.logoContainer}>
 				<img
-					src='/assets/logo.png'
+					src='/logo.png'
 					alt='Logo'
 					className={styles.logoImg}
 				/>
@@ -42,7 +42,7 @@ export default function TopNav() {
 						</div>
 					)}
 					<img
-						src='/assets/search.png'
+						src='/search.png'
 						alt='Search'
 						className={`${styles.iconImg} ${
 							showSearch
@@ -61,8 +61,8 @@ export default function TopNav() {
 					<img
 						src={
 							hasNotification
-								? "/assets/avatar-notification.png"
-								: "/assets/avatar.png"
+								? "/avatar-notification.png"
+								: "/avatar.png"
 						}
 						alt='Avatar'
 						className={styles.avatarImg}

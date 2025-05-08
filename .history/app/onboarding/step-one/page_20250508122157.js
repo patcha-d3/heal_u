@@ -3,7 +3,6 @@
 import React from "react";
 import Button from "../../../ui/Button/Button";
 import SmallButton from "../../../ui/Tooltip/Tooltip";
-import Skipchip from "../../../ui/Skipchip/Skipchip";
 
 export default function StepOnePage() {
 	const handleClick = () => {
@@ -16,11 +15,6 @@ export default function StepOnePage() {
 				<SmallButton
 					onClick={() => alert("Help info")}
 					tooltip='Need help?'
-				/>
-			</div>
-			<div className='absolute top-5 right-[22px]'>
-				<Skipchip
-					onClick={() => alert("Skipping...")}
 				/>
 			</div>
 			<main className='h-full flex flex-col'>
@@ -42,18 +36,16 @@ export default function StepOnePage() {
 						*All questions must be answered
 						to receive a tailored plan.
 					</p>
-					<div className='w-full'>
-						<Button
-							text='Start Diagnosis'
-							onClick={() => {
-								alert(
-									"Starting diagnosis..."
-								);
-							}}
-							fullWidth={true}
-							outlined={false}
-						/>
-					</div>
+					<Button
+						text='Start Diagnosis'
+						onClick={() => {
+							alert(
+								"Starting diagnosis..."
+							);
+							// Add your navigation or next step logic here
+						}}
+						fullWidth={true}
+					/>
 				</div>
 			</main>
 			<img
