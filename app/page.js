@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Button from "../ui/Button/Button";
-import SmallButton from '../ui/Button-s/Button-s';
 import ButtonSurvey from "../ui/Button-survey/Button-survey";
 
 export default function RootPage() {
@@ -11,7 +10,6 @@ export default function RootPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-4">
-      <SmallButton onClick={() => alert('Help info')} tooltip="Need help?" />
 	  <h1 className="text-4xl font-bold mb-8">Welcome to Heal U</h1>
     <div className="w-[400px] mx-auto">
       <div className="grid grid-cols-2 gap-4 mb-8">
