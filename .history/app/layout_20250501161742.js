@@ -1,5 +1,3 @@
-"use client";
-
 import { Geist, Geist_Mono } from "next/font/google";
 import { Roboto } from "next/font/google";
 import "./globals.css";
@@ -23,6 +21,11 @@ const roboto = Roboto({
 	subsets: ["latin"],
 	display: "swap",
 });
+
+export const metadata = {
+	title: "Heal U",
+	description: "Mental health companion app",
+};
 
 export default function RootLayout({ children }) {
 	const pathname = usePathname();
