@@ -1,4 +1,4 @@
-import Accordion from "../../ui/Accordion/Accordion";
+import Accordion from "../../ui/Accordion/Accordion.js";
 import styles from "../../ui/Accordion/Accordion.module.css";
 
 export default function HomePage() {

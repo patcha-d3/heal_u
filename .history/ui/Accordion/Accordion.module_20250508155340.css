@@ -4,7 +4,7 @@
   text-align: left;
   padding: 1em;
   font-weight: bold;
-  background: #cfc4f4;
+  background: #CFC4F4;
   border: none;
   outline: none;
   cursor: pointer;
@@ -33,7 +33,7 @@
   height: 64px;
   border-radius: 24px;
   margin-bottom: 8px;
-  background-color: #fdfbf9;
+  background-color: #FDFBF9;
 }
 .day {
   display: flex;
@@ -51,59 +51,54 @@
   height: 25px;
 }
 .done {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
   font-weight: bold;
   padding: 4px 8px;
 }
 .active {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
   font-weight: bold;
   padding: 4px 8px;
 }
 .pending {
-  display: flex;
-  align-items: center;
-  font-weight: bold;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
   color: #b0b0b0;
   padding: 4px 8px;
 }
 
 .accordionButton {
-  width: 408px;
-  height: 80px;
-  text-align: left;
-  padding: 1em;
-  font-weight: bold;
-  background: #cfc4f4;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  border-radius: 24px;
-  color: black;
-  font-size: 16px;
-
-  display: flex;
-  align-items: center;
-}
-
-.titleWrapper {
-  display: flex;
-  align-items: center;
-  gap: 8px; /* space between title and arrow */
-}
-
-.arrow {
-  transition: transform 0.3s ease;
-}
-
-.rotate {
-  transform: rotate(90deg);
-}
-
-.headingText {
-  font-size: 40px;
-  font-weight: bold;
-  color: white;
-}
+    width: 408px;
+    height: 80px;
+    text-align: left;
+    padding: 1em;
+    font-weight: bold;
+    background: #CFC4F4;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 24px;
+    color: black;
+    font-size: 16px;
+  
+    display: flex;
+    align-items: center;
+  }
+  
+  .titleWrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* space between title and arrow */
+  }
+  
+  .arrow {
+    transition: transform 0.3s ease;
+  }
+  
+  .rotate {
+    transform: rotate(90deg);
+  }
+  

@@ -1,4 +1,5 @@
 import Accordion from "../../ui/Accordion/Accordion";
+import styles from "../../ui/Accordion/Accordion.module.css";
 
 export default function HomePage() {
   const accordionItems = [
@@ -21,9 +22,12 @@ export default function HomePage() {
   ];
 
   return (
-    <div>
-      <h1>Home</h1>
+    <main
+      className="flex min-h-screen flex-col items-center justify-center p-4"
+      style={{ backgroundColor: "#29424D" }}
+    >
+      <h1 className={styles.headingText}>Hi, Rachel!</h1>
       <Accordion items={accordionItems} />
-    </div>
+    </main>
   );
 }

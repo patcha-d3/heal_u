@@ -22,12 +22,17 @@ export default function HomePage() {
   ];
 
   return (
-    <main
-      className="flex min-h-screen flex-col items-center justify-center p-4"
-      style={{ backgroundColor: "#29424D" }}
-    >
+    <div>
       <h1 className={styles.headingText}>Hi, Rachel!</h1>
       <Accordion items={accordionItems} />
-    </main>
+    </div>
   );
-}
+
+
+  <div
+    style={{ backgroundColor: "#29424D", minHeight: "100vh", padding: "2rem" }}
+  >
+    <h1 className={styles.headingText}>Hi, Rachel!</h1>
+    <Accordion items={accordionItems} />
+  </div>
+);}
