@@ -11,12 +11,11 @@ export default function StepOnePage() {
 
 	return (
 		<div className='w-[406px] h-[800px] bg-[#FDFBF9] rounded-[48px] px-4 py-[18px] relative'>
-			<div className='absolute top-6 left-[21px]'>
-				<SmallButton
-					onClick={() => alert("Help info")}
-					tooltip='Need help?'
-				/>
-			</div>
+			<SmallButton
+				onClick={() => alert("Help info")}
+				tooltip='Need help?'
+				className='absolute top-6 left-[21px]'
+			/>
 			<main className='h-full flex flex-col'>
 				<div className='flex-1'>
 					<h1 className='font-roboto text-[40px] leading-[48px] mt-[88px] ml-4 font-bold text-[#2E2E30]'>

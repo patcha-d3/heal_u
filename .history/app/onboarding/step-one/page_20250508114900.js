@@ -2,7 +2,7 @@
 
 import React from "react";
 import Button from "../../../ui/Button/Button";
-import SmallButton from "../../../ui/Tooltip/Tooltip";
+import SmallButton from "../../../ui/Button-s/Button-s";
 
 export default function StepOnePage() {
 	const handleClick = () => {
