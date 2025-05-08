@@ -37,9 +37,9 @@ export default function StepOnePage() {
 				</div>
 			</main>
 			<img
-				src='/assets/sthetoscope 1.png'
+				src='/assets/stethoscope 1.png'
 				alt='Stethoscope'
-				className='absolute bottom-4 right-4 w-[336px] h-[382px]'
+				className='absolute bottom-4 right-4 w-[200px] h-auto'
 			/>
 		</div>
 	);
