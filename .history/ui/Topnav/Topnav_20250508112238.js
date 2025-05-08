@@ -10,10 +10,7 @@ export default function TopNav() {
 	return (
 		<header
 			className={styles.topBar}
-			style={{
-				borderBottom:
-					"1px solid rgba(255, 255, 255, 0.5)",
-			}}
+			style={{ borderBottom: "1px solid #FFFFFF" }}
 		>
 			<a href='/' className={styles.logoContainer}>
 				<img

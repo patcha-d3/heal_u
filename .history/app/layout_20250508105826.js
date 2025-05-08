@@ -34,13 +34,11 @@ export default function RootLayout({ children }) {
 				className={`${geistSans.variable} ${geistMono.variable} ${roboto.className} antialiased`}
 				suppressHydrationWarning
 			>
-				<div className='min-h-screen w-full flex items-center justify-center'>
-					<div className='w-[440px] h-[956px] relative flex flex-col bg-[#29424D]'>
+				<div className='min-h-screen w-full flex items-center justify-center bg-gray-100'>
+					<div className='w-[440px] h-[956px] bg-white shadow-lg relative overflow-hidden flex flex-col'>
 						<TopNav />
-						<main className='flex-1 overflow-y-auto flex items-center justify-end'>
-							<div className='w-[406px] h-[800px] bg-[#FDFBF9] mx-4 mb-4 rounded-[48px]'>
-								{children}
-							</div>
+						<main className='flex-1 overflow-y-auto'>
+							{children}
 						</main>
 						{showBottomNav && (
 							<div className='absolute bottom-0 left-0 right-0'>
