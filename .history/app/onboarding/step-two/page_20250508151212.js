@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import ButtonSurvey from "../../../ui/Button-survey/Button-survey";
 import Image from "next/image";
 import ExitChip from "../../../ui/Exitchip/Exitchip";
-import SurveyProgress from "../../../ui/SurveyProgress/SurveyProgress";
+import SurveyProgress from "@/ui/Surveyprogress/SurveyProgress";
 
 export default function RootPage() {
 	const [selected, setSelected] = useState(null);
