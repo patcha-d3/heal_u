@@ -24,7 +24,7 @@ export default function RootPage() {
         {/* Image and Button Wrapper */}
         <div className="flex flex-col items-center gap-6 mt-8">
           <Image
-            src="/survey-img.png"
+            src="./survey-img.png"
             alt="Survey"
             width={400}
             height={260}
