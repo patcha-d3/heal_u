@@ -18,7 +18,7 @@ export default function StepThreePage() {
 					>
 						Congratulations, Rachel!
 					</h2>
-					<div className='w-[90%] max-w-[340px] aspect-square bg-[#F7F4EF] rounded-2xl flex items-center justify-center mb-[55px]'>
+					<div className='w-[90%] max-w-[340px] aspect-square bg-[#F7F4EF] rounded-2xl flex items-center justify-center mb-[50px]'>
 						<img
 							src='/gif/congrats.gif'
 							alt='Congratulations'

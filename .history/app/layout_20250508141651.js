@@ -29,7 +29,6 @@ export default function RootLayout({ children }) {
 	const showBottomNav = !pathname?.includes("/onboarding");
 	const isStepOne = pathname?.includes("/onboarding/step-one");
 	const isStepTwo = pathname?.includes("/onboarding/step-two");
-	const isStepThree = pathname?.includes("/onboarding/step-three");
 
 	return (
 		<html lang='en'>
@@ -42,8 +41,7 @@ export default function RootLayout({ children }) {
 						className={`w-[440px] h-[956px] relative flex flex-col ${
 							isStepOne
 								? "bg-[#29424D]"
-								: isStepTwo ||
-								  isStepThree
+								: isStepTwo
 								? "bg-white"
 								: ""
 						}`}

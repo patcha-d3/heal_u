@@ -27,9 +27,6 @@ const roboto = Roboto({
 export default function RootLayout({ children }) {
 	const pathname = usePathname();
 	const showBottomNav = !pathname?.includes("/onboarding");
-	const isStepOne = pathname?.includes("/onboarding/step-one");
-	const isStepTwo = pathname?.includes("/onboarding/step-two");
-	const isStepThree = pathname?.includes("/onboarding/step-three");
 
 	return (
 		<html lang='en'>
@@ -38,18 +35,9 @@ export default function RootLayout({ children }) {
 				suppressHydrationWarning
 			>
 				<div className='min-h-screen w-full flex items-center justify-center'>
-					<div
-						className={`w-[440px] h-[956px] relative flex flex-col ${
-							isStepOne
-								? "bg-[#29424D]"
-								: isStepTwo ||
-								  isStepThree
-								? "bg-white"
-								: ""
-						}`}
-					>
+					<div className='w-[440px] h-[956px] relative flex flex-col bg-[#29424D]'>
 						<TopNav />
-						<main className='flex-1 overflow-y-auto flex items-center justify-center'>
+						<main className='flex-1 overflow-y-auto flex items-center justify-end'>
 							{children}
 						</main>
 						{showBottomNav && (
