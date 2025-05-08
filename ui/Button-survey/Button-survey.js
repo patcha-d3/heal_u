@@ -1,13 +1,14 @@
 import React from 'react';
-import './Button-survey.css';
+import styles from './Button-survey.module.css';
+
 
 const ButtonSurvey = ({ label, active, onClick }) => (
-    <button 
-        className={`surveyButton${active ? ' active' : ''}`} 
-        onClick={onClick}
-    >
-        {label}
-    </button>
+  <button
+    className={`${styles.surveyButton}${active ? ' ' + styles.active : ''}`}
+    onClick={onClick}
+  >
+    {label}
+  </button>
 );
 
 export default ButtonSurvey;
