@@ -11,9 +11,9 @@ export default function RootPage() {
 	const totalSteps = 8;
 
 	return (
-		<div className='w-[406px] h-[800px] bg-white rounded-[48px] relative'>
-			<ExitChip className='absolute top-[16px] right-[16px]' />
-			<main className='h-full flex flex-col px-4 py-[18px]'>
+		<div className='w-[406px] h-[800px] bg-white rounded-[48px] px-4 py-[18px] relative'>
+			<ExitChip className='absolute top-4 right-4' />
+			<main className='h-full flex flex-col'>
 				{/* Survey Title */}
 				<div className='text-[24px] font-inter font-bold text-center my-4'>
 					Survey {currentStep}/{totalSteps}

@@ -9,7 +9,7 @@ export default function StepThreePage() {
 	};
 
 	return (
-		<div className='w-[406px] h-[800px] relative'>
+		<div className='w-[406px] h-[800px] bg-white rounded-[48px] relative'>
 			<main className='h-full flex flex-col px-4 py-[18px]'>
 				<div className='flex-1 flex flex-col items-center justify-center'>
 					<h2
@@ -18,7 +18,7 @@ export default function StepThreePage() {
 					>
 						Congratulations, Rachel!
 					</h2>
-					<div className='w-[90%] max-w-[340px] aspect-square bg-[#F7F4EF] rounded-2xl flex items-center justify-center mb-[55px]'>
+					<div className='w-[90%] max-w-[340px] aspect-square bg-[#F7F4EF] rounded-2xl flex items-center justify-center mb-[50px]'>
 						<img
 							src='/gif/congrats.gif'
 							alt='Congratulations'
