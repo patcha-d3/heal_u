@@ -30,13 +30,10 @@
 
 .icon {
   font-size: 24px;
-  color: white;
-  width: 24px;
-  height: 24px;
 }
 
 .iconActive {
-  color: #cdf06b;
+  background-color: #cdf06b;
 }
 
 .label {
