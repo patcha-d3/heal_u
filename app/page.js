@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Button from "../ui/Button/Button";
-import SmallButton from '../ui/Button-s/Button-s';
+import SmallButton from '../ui/Tooltip/Tooltip';
 import ButtonSurvey from "../ui/Button-survey/Button-survey";
 
 export default function RootPage() {
