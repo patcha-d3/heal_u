@@ -1,0 +1,23 @@
+.surveyButton {
+    background-color: #CFC4F4;
+    color: #29424D;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    width: 184px;
+    height: 140px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.surveyButton.active {
+    background-color: #29424D;
+    color: #CFC4F4;
+}
