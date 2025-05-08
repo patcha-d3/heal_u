@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import ButtonSurvey from "../../../ui/Button-survey/Button-survey";
 import Image from "next/image";
+import ExitChip from "../../../ui/ExitChip/Exitchip";
 
 export default function RootPage() {
   const [selected, setSelected] = useState(null);
@@ -11,6 +12,9 @@ export default function RootPage() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-4">
+      <div className="flex justify-end w-full">
+        <ExitChip />
+      </div>
       {/* Survey Title */}
       <div className="text-[24px] font-inter font-bold text-center my-4">
         Survey {currentStep}/{totalSteps}
