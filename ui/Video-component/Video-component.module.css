@@ -1,0 +1,48 @@
+.videoWrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* or whatever width you want */
+    margin: 0 auto;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #000;
+  }
+  
+  .video {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    pointer-events: none; /* allow video interaction except for buttons */
+  }
+  
+  .controlBtn {
+    background: rgba(255,255,255,0.8);
+    border: none;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: background-color 0.2s;
+  }
+  
+  .controlBtn:hover {
+    background: rgba(200,200,200,0.9);
+  }
+  .controlBtn img {
+    width: 32px;
+    height: 32px;
+  }
