@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Button from "../ui/Button/Button";
-import SmallButton from '../ui/Tooltip/Tooltip';
+import SmallButton from '../ui/Button-s/Button-s';
 import ButtonSurvey from "../ui/Button-survey/Button-survey";
 
 export default function RootPage() {
@@ -17,15 +17,7 @@ export default function RootPage() {
       <div className="grid grid-cols-2 gap-4 mb-8">
         <ButtonSurvey label="Daily" active={selected === "Daily"} onClick={() => setSelected("Daily")} />
         <ButtonSurvey label="3-4 times a week" active={selected === "3-4 times a week"} onClick={() => setSelected("3-4 times a week")} />
-        <ButtonSurvey 
-          label={
-            <>
-              Occasionally<br/>(1-2 times/week)
-            </>
-          }
-          active={selected === "Occasionally (1-2 times/week)"}
-          onClick={() => setSelected("Occasionally (1-2 times/week)")}
-        />
+        <ButtonSurvey label="Occasionally (1-2 times/week)" active={selected === "Occasionally (1-2 times/week)"} onClick={() => setSelected("Occasionally (1-2 times/week)")} />
         <ButtonSurvey label="Rarely" active={selected === "Rarely"} onClick={() => setSelected("Rarely")} />
       </div>
     </div>
