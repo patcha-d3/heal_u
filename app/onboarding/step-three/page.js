@@ -5,7 +5,7 @@ import Button from "../../../ui/Button/Button";
 
 export default function StepThreePage() {
 	const handleClick = () => {
-		alert("View My Plan clicked!");
+		alert("Will be redirected to the home page!");
 	};
 
 	return (
