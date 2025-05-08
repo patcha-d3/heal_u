@@ -36,18 +36,11 @@ export default function StepOnePage() {
 						*All questions must be answered
 						to receive a tailored plan.
 					</p>
-					<div className='w-full'>
-						<Button
-							text='Start Diagnosis'
-							onClick={() => {
-								alert(
-									"Starting diagnosis..."
-								);
-							}}
-							fullWidth={true}
-							outlined={false}
-						/>
-					</div>
+					<Button
+						text='Start Diagnosis'
+						onClick={handleClick}
+						fullWidth={false}
+					/>
 				</div>
 			</main>
 			<img
