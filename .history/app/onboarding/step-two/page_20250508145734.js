@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import ButtonSurvey from "../../../ui/Button-survey/Button-survey";
 import Image from "next/image";
 import ExitChip from "../../../ui/Exitchip/Exitchip";
-import Surveyprogress from "../../../ui/Surveyprogress/Surveyprogress";
+import SurveyProgress from "../../../ui/Surveyprogress/Surveyprogress";
 
 export default function RootPage() {
 	const [selected, setSelected] = useState(null);
@@ -15,7 +15,7 @@ export default function RootPage() {
 		<div className='w-[406px] h-[800px] relative'>
 			<ExitChip className='absolute top-[16px] right-[16px]' />
 			<main className='h-full flex flex-col px-4 py-[18px]'>
-				<Surveyprogress
+				<SurveyProgress
 					currentStep={currentStep}
 					totalSteps={totalSteps}
 				/>
