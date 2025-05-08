@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { IoArrowBack } from "react-icons/io5";
 import styles from "./Button-back.module.css";
 
 export default function ButtonBack({ onClick, className = "" }) {
@@ -12,7 +11,13 @@ export default function ButtonBack({ onClick, className = "" }) {
 			aria-label='Go back'
 			type='button'
 		>
-			<IoArrowBack className={styles.arrowIcon} />
+			<img
+				src='/asset/Button-errow.png'
+				alt='Back'
+				width={52}
+				height={40}
+				className={styles.arrowImage}
+			/>
 		</button>
 	);
 }
