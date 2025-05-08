@@ -3,70 +3,96 @@
 import React, { useState } from "react";
 import ButtonSurvey from "../../../ui/Button-survey/Button-survey";
 import Image from "next/image";
+import ExitChip from "../../../ui/Exitchip/Exitchip";
+import SurveyProgress from "../../../ui/SurveyProgress/SurveyProgress";
+import ButtonBack from "../../../ui/Button-back/Button-back";
+import ButtonForward from "../../../ui/Button-forward/Button-forward";
 
 export default function RootPage() {
-  const [selected, setSelected] = useState(null);
-  const currentStep = 4;
-  const totalSteps = 8;
+	const [selected, setSelected] = useState(null);
+	const currentStep = 4;
+	const totalSteps = 8;
 
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-4">
-      {/* Survey Title */}
-      <div className="text-[24px] font-inter font-bold text-center my-4">
-        Survey {currentStep}/{totalSteps}
-      </div>
+	return (
+		<div className='w-[406px] h-[800px] relative'>
+			<ExitChip className='absolute top-[16px] right-[16px]' />
+			<ButtonBack className='absolute bottom-[48px] left-[11px]' />
+			<ButtonForward className='absolute bottom-[48px] right-[11px]' />
+			<main className='h-full flex flex-col px-4 py-[18px]'>
+				<SurveyProgress
+					currentStep={currentStep}
+					totalSteps={totalSteps}
+				/>
 
-      {/* Progress Bar */}
-      <div className="flex gap-2 mb-8">
-        {Array.from({ length: totalSteps }).map((_, index) => (
-          <div
-            key={index}
-            className={`w-8 h-3 rounded-full ${
-              index < currentStep ? "bg-[#29424D]" : "border-2 border-[#29424D]"
-            }`}
-          ></div>
-        ))}
-      </div>
+				{/* Image and Button Wrapper */}
+				<div className='flex flex-col items-center gap-6 mt-8'>
+					<Image
+						src='/survey-img.png'
+						alt='Survey'
+						width={400}
+						height={260}
+						className='rounded-lg'
+					/>
 
-      {/* Image and Button Wrapper */}
-      <div className="flex flex-col items-center gap-6 mb-8">
-        <Image
-          src="/survey-img.png"
-          alt="Survey"
-          width={400}
-          height={260}
-          className="rounded-lg"
-        />
-
-        <div className="grid grid-cols-2 gap-4">
-          <ButtonSurvey
-            label="Daily"
-            active={selected === "Daily"}
-            onClick={() => setSelected("Daily")}
-          />
-          <ButtonSurvey
-            label="3-4 times a week"
-            active={selected === "3-4 times a week"}
-            onClick={() => setSelected("3-4 times a week")}
-          />
-          <ButtonSurvey
-            label={
-              <>
-                Occasionally
-                <br />
-                (1-2 times/week)
-              </>
-            }
-            active={selected === "Occasionally (1-2 times/week)"}
-            onClick={() => setSelected("Occasionally (1-2 times/week)")}
-          />
-          <ButtonSurvey
-            label="Rarely"
-            active={selected === "Rarely"}
-            onClick={() => setSelected("Rarely")}
-          />
-        </div>
-      </div>
-    </main>
-  );
+					<div className='grid grid-cols-2 gap-4'>
+						<ButtonSurvey
+							label='Daily'
+							active={
+								selected ===
+								"Daily"
+							}
+							onClick={() =>
+								setSelected(
+									"Daily"
+								)
+							}
+						/>
+						<ButtonSurvey
+							label='3-4 times a week'
+							active={
+								selected ===
+								"3-4 times a week"
+							}
+							onClick={() =>
+								setSelected(
+									"3-4 times a week"
+								)
+							}
+						/>
+						<ButtonSurvey
+							label={
+								<>
+									Occasionally
+									<br />
+									(1-2
+									times/week)
+								</>
+							}
+							active={
+								selected ===
+								"Occasionally (1-2 times/week)"
+							}
+							onClick={() =>
+								setSelected(
+									"Occasionally (1-2 times/week)"
+								)
+							}
+						/>
+						<ButtonSurvey
+							label='Rarely'
+							active={
+								selected ===
+								"Rarely"
+							}
+							onClick={() =>
+								setSelected(
+									"Rarely"
+								)
+							}
+						/>
+					</div>
+				</div>
+			</main>
+		</div>
+	);
 }
