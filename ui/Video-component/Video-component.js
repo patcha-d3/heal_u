@@ -10,7 +10,7 @@ export default function VideoComponent() {
   const router = useRouter();
 
   const handleVideoEnd = () => {
-    router.push("/recover-plan/step-two");
+    router.push("./step-two");
   };
 
   const handlePlayPause = () => {
@@ -31,7 +31,7 @@ export default function VideoComponent() {
 
   const handleForward = () => {
     if (videoRef.current) {
-      videoRef.current.currentTime += 10; // Go forward 10 seconds
+      videoRef.current.currentTime += 10; 
     }
   };
 
@@ -47,7 +47,7 @@ export default function VideoComponent() {
         onEnded={handleVideoEnd}
       />
       <div className={styles.overlay}>
-        {/* Background SVG */}
+       
         <img
           src="/assets/background-of-playbutton.svg"
           alt=""
@@ -55,7 +55,7 @@ export default function VideoComponent() {
           aria-hidden="true"
           draggable="false"
         />
-        {/* Buttons */}
+     
         <div className={styles.buttonRow}>
           <div className={styles.leftBtn}>
             <button
