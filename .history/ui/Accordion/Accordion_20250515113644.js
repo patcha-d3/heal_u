@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import styles from "./Accordion.module.css";
 
-const AccordionItem = ({ title, subitems, isOpen, onClick, onSubitemClick }) => (
+const AccordionItem = ({ title, subitems, isOpen, onClick }) => (
   <div className={styles.accordionItem}>
     <button onClick={onClick} className={styles.accordionButton}>
       <span className={styles.titleWrapper}>
@@ -24,11 +24,7 @@ const AccordionItem = ({ title, subitems, isOpen, onClick, onSubitemClick }) => 
       <div className={styles.accordionContent}>
         {subitems &&
           subitems.map((item, idx) => (
-            <div 
-              key={idx} 
-              className={`${styles.subitem} ${item.status === "active" ? styles.activeSubitem : ""}`}
-              onClick={() => item.status === "active" && onSubitemClick && onSubitemClick(item)}
-            >
+            <div key={idx} className={styles.subitem}>
               <span className={styles.day}>D - {item.day}</span>
               <span
                 className={
@@ -41,15 +37,6 @@ const AccordionItem = ({ title, subitems, isOpen, onClick, onSubitemClick }) => 
               >
                 {item.label}
               </span>
-              {item.status === "done" ? (
-                <div className={styles.checkmark}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 6L9 17L4 12" stroke="#B2B2B2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-              ) : (
-                <div className={`${styles.circle} ${styles[item.status]}`} />
-              )}
             </div>
           ))}
       </div>
@@ -57,7 +44,7 @@ const AccordionItem = ({ title, subitems, isOpen, onClick, onSubitemClick }) => 
   </div>
 );
 
-export default function Accordion({ items, onSubitemClick }) {
+export default function Accordion({ items }) {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
@@ -69,7 +56,6 @@ export default function Accordion({ items, onSubitemClick }) {
           subitems={item.subitems}
           isOpen={openIndex === idx}
           onClick={() => setOpenIndex(openIndex === idx ? null : idx)}
-          onSubitemClick={onSubitemClick}
         />
       ))}
     </div>
