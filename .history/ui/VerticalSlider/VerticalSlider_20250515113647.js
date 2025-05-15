@@ -88,6 +88,11 @@ export default function Verticalslider({ onChange, value }) {
 								: ""
 						}`}
 					>
+						<div
+							className={
+								styles.markDot
+							}
+						/>
 						<span
 							className={
 								styles.markLabel

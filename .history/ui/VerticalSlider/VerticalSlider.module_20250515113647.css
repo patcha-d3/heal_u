@@ -1,20 +1,18 @@
 .sliderContainer {
 	position: relative;
-	height: 485px;
+	height: 300px;
 	width: 100%;
 	display: flex;
 	align-items: center;
-	justify-content: center;
 	padding: 20px 0;
 }
 
 .sliderTrack {
 	position: relative;
-	width: 32px;
+	width: 4px;
 	height: 100%;
-	background-color: transparent;
-	border: 3px solid #e5e7eb;
-	border-radius: 16px;
+	background-color: #e5e7eb;
+	border-radius: 2px;
 	margin: 0 20px;
 }
 
@@ -23,7 +21,7 @@
 	bottom: 0;
 	width: 100%;
 	background-color: #29424d;
-	border-radius: 13px;
+	border-radius: 2px;
 	transition: height 0.1s ease;
 }
 
@@ -56,18 +54,23 @@
 .mark {
 	display: flex;
 	align-items: center;
-	padding-left: 20px;
+	gap: 12px;
+}
+
+.markDot {
+	width: 8px;
+	height: 8px;
+	background-color: #e5e7eb;
+	border-radius: 50%;
+	transition: background-color 0.2s ease;
+}
+
+.activeMark .markDot {
+	background-color: #29424d;
 }
 
 .markLabel {
-	font-family: "Roboto", sans-serif;
-	font-size: 20px;
-	font-weight: 700;
+	font-size: 16px;
 	color: #29424d;
-	transition: color 0.2s ease;
-}
-
-.activeMark .markLabel {
-	color: #29424d;
-	font-weight: 700;
+	font-weight: 500;
 }
