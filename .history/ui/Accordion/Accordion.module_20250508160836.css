@@ -1,5 +1,5 @@
 .accordionButton {
-  width: 404px;
+  width: 408px;
   height: 80px;
   text-align: left;
   padding: 1em;
@@ -7,79 +7,34 @@
   background: #cfc4f4;
   border: none;
   outline: none;
+  cursor: pointer;
   border-radius: 24px;
   color: black;
   font-size: 16px;
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
 }
 
 .accordionContent {
   padding: 1em;
+  background: #fff;
   color: black;
 }
 
 .accordionItem {
   margin-bottom: 8px;
-  width: 100%;
-  max-width: 100%;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 18px;
-  position: relative;
-  text-align: left;
-  box-sizing: border-box;
 }
 
 .subitem {
-  width: 100%;
   display: flex;
   align-items: center;
   padding: 12px 16px;
   font-size: 16px;
   gap: 12px;
+  width: 390px;
   height: 64px;
   border-radius: 24px;
   margin-bottom: 8px;
-  position: relative;
-  box-sizing: border-box;
+  background-color: #fdfbf9;
 }
-
-.circle {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  position: absolute;
-  right: 16px;
-}
-
-.circle.done {
-  background-color: #fff;
-  border: 1px solid #B2B2B2;
-}
-
-.circle.active {
-  background-color: #fff;
-  border: 1px solid #B2B2B2;
-}
-
-.circle.pending {
-  background-color: #fff;
-  border: 1px solid #B2B2B2;
-  opacity: 0.5;
-}
-
-.activeSubitem {
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-  background-color: #F8F3EC;
-}
-
-.activeSubitem:hover {
-  background-color: #F8F3EC;
-}
-
 .day {
   display: flex;
   border: 1px solid #999999;
@@ -100,21 +55,37 @@
   align-items: center;
   font-weight: bold;
   padding: 4px 8px;
-  color: #b0b0b0;
 }
 .active {
+  display: flex;
+  align-items: center;
   font-weight: bold;
-  background: #f7f4ef;
-  border-radius: 12px;
   padding: 4px 8px;
 }
-
 .pending {
   display: flex;
   align-items: center;
   font-weight: bold;
   color: #b0b0b0;
   padding: 4px 8px;
+}
+
+.accordionButton {
+  width: 408px;
+  height: 80px;
+  text-align: left;
+  padding: 1em;
+  font-weight: bold;
+  background: #cfc4f4;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 24px;
+  color: black;
+  font-size: 16px;
+
+  display: flex;
+  align-items: center;
 }
 
 .titleWrapper {
@@ -131,13 +102,8 @@
   transform: rotate(90deg);
 }
 
-.checkmark {
-  position: absolute;
-  right: 16px;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.headingText {
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
 }
-

@@ -6,13 +6,11 @@ import SurveyProgress from "../../../ui/SurveyProgress/SurveyProgress";
 import ButtonBack from "../../../ui/Button-back/Button-back";
 import ButtonForward from "../../../ui/Button-forward/Button-forward";
 import Verticalslider from "../../../ui/VerticalSlider/VerticalSlider";
-import { useRouter } from "next/navigation";
 
 export default function RootPage() {
 	const [selectedHours, setSelectedHours] = useState(0);
 	const currentStep = 6;
 	const totalSteps = 8;
-	const router = useRouter();
 
 	const handleSliderChange = (value) => {
 		setSelectedHours(value);
@@ -21,18 +19,8 @@ export default function RootPage() {
 	return (
 		<div className='w-[406px] h-[800px] relative'>
 			<ExitChip className='absolute top-[16px] right-[16px]' />
-			<ButtonBack
-				className='absolute bottom-[48px] left-[11px]'
-				onClick={() =>
-					router.push("/onboarding/step-two")
-				}
-			/>
-			<ButtonForward
-				className='absolute bottom-[48px] right-[11px]'
-				onClick={() =>
-					router.push("/onboarding/step-three")
-				}
-			/>
+			<ButtonBack className='absolute bottom-[48px] left-[11px]' />
+			<ButtonForward className='absolute bottom-[48px] right-[11px]' />
 			<main className='h-full flex flex-col px-4 py-[18px]'>
 				<SurveyProgress
 					currentStep={currentStep}
