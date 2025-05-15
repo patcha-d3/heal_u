@@ -1,11 +1,10 @@
 import Button from "../../../ui/Button/Button";
 import Image from "next/image";
 
-export default function SomePage() {
+export default function StepTwoPage() {
   return (
     <div className="relative h-full">
       <main className="h-full flex flex-col px-4 py-[18px] items-center">
-        {/* Title and Edit Icon Row */}
         <div className="flex justify-between items-center w-full mb-8 mt-4">
           <h2
             className="text-3xl font-bold text-center w-full"
@@ -22,12 +21,11 @@ export default function SomePage() {
           />
         </div>
 
-        {/* Card */}
-        <div className="flex flex-col items-center bg-[#FAF9F6] rounded-xl py-8 px-6 mb-6 w-full max-w-md">
+        <div className="flex flex-col items-center bg-[#FAF9F6] rounded-xl py-8 px-6 mb-6 w-[380px] h-[380px]">
           <h3 className="text-2xl font-bold mb-2" style={{ color: "#2E2E30" }}>
             Day-2
           </h3>
-          <p className="text-lg font-bold" style={{ color: "#2E2E30" }}>
+          <p className="text-lg font-bold mb-12" style={{ color: "#2E2E30" }}>
             Neck Stretch
           </p>
           <Image
@@ -39,17 +37,21 @@ export default function SomePage() {
           />
         </div>
 
-        {/* What's Next */}
-        <div className="w-full max-w-md">
+        <div className="w-full max-w-md  ">
           <p className="font-bold mb-4" style={{ color: "#2E2E30" }}>
             What's Next?
           </p>
-          <div className="flex flex-col w-full space-y-4">
-            <Button
-              classname="font-bold text-center"
-              text="Keep Going: Lower Back"
-              className="w-full py-4 rounded-full font-bold text-lg"
-            />
+          <div className="flex flex-col w-[320px] space-y-4 ">
+            <Button className="rounded-full font-bold text-lg w-[90%] mx-auto flex items-center justify-center gap-2">
+              Keep Going: Lower Back
+              <Image
+                src="/icons/nex-errow.svg"
+                alt="Next"
+                width={24}
+                height={24}
+                className="ml-2"
+              />
+            </Button>
             <Button
               classname="font-bold text-center"
               text="Go to Main"
@@ -59,6 +61,6 @@ export default function SomePage() {
           </div>
         </div>
       </main>
-    </div> 
+    </div>
   );
 }
