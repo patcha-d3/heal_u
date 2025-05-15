@@ -3,12 +3,14 @@
 import React from "react";
 import Button from "../../../ui/Button/Button";
 import { useRouter } from "next/navigation";
+import ExitChip from "../../../ui/Exitchip/Exitchip";
 
 export default function StepThreePage() {
 	const router = useRouter();
 
 	return (
 		<div className='w-[406px] h-[800px] relative'>
+			<ExitChip className='absolute top-[16px] right-[16px]' />
 			<main className='h-full flex flex-col px-4 py-[18px]'>
 				<div className='flex flex-col items-center gap-6 mt-8'>
 					<h2

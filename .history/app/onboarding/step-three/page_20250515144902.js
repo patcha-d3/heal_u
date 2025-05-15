@@ -3,13 +3,27 @@
 import React from "react";
 import Button from "../../../ui/Button/Button";
 import { useRouter } from "next/navigation";
+import ExitChip from "../../../ui/Exitchip/Exitchip";
+import SurveyProgress from "../../../ui/SurveyProgress/SurveyProgress";
+import ButtonBack from "../../../ui/Button-back/Button-back";
+import ButtonForward from "../../../ui/Button-forward/Button-forward";
 
 export default function StepThreePage() {
 	const router = useRouter();
+	const currentStep = 5;
+	const totalSteps = 8;
 
 	return (
 		<div className='w-[406px] h-[800px] relative'>
+			<ExitChip className='absolute top-[16px] right-[16px]' />
+			<ButtonBack className='absolute bottom-[48px] left-[11px]' />
+			<ButtonForward className='absolute bottom-[48px] right-[11px]' />
 			<main className='h-full flex flex-col px-4 py-[18px]'>
+				<SurveyProgress
+					currentStep={currentStep}
+					totalSteps={totalSteps}
+				/>
+
 				<div className='flex flex-col items-center gap-6 mt-8'>
 					<h2
 						className='text-3xl font-bold text-center'
