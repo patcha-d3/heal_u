@@ -15,6 +15,7 @@
 	background-color: transparent;
 	border: 3px solid #e5e7eb;
 	border-radius: 16px;
+	margin: 0 20px;
 }
 
 .sliderFill {
@@ -44,7 +45,8 @@
 
 .marks {
 	position: absolute;
-	right: -32px;
+	left: 0;
+	right: 0;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -54,6 +56,7 @@
 .mark {
 	display: flex;
 	align-items: center;
+	padding-left: 20px;
 }
 
 .markLabel {
