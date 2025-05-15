@@ -1,5 +1,5 @@
+import "./home.css";
 import Accordion from "../../ui/Accordion/Accordion";
-import styles from "../../ui/Accordion/Accordion.module.css";
 
 export default function HomePage() {
   const accordionItems = [
@@ -15,19 +15,19 @@ export default function HomePage() {
       title: "Lower Back",
       subitems: [
         { day: 1, label: "Pelvic Tilt", status: "done" },
-        { day: 2, label: "Knee-to-Chest Stretch", status: "pending" },
+        { day: 2, label: "Knee-to-Chest Stretch", status: "active" },
         { day: 3, label: "Bridge Exercise", status: "pending" },
       ],
     },
   ];
 
   return (
-    <main
-      className="flex min-h-screen flex-col items-center justify-center p-4"
-      style={{ backgroundColor: "#29424D" }}
-    >
-      <h1 className={styles.headingText}>Hi, Rachel!</h1>
-      <Accordion items={accordionItems} />
-    </main>
+    <div className="homePageContainer">
+      <div className="w-[440px] h-[600px] bg-[#FDFBF9] rounded-t-[48px] px-4 py-[18px] justify-items-center relative flex flex-col items-center overflow-y-auto">
+        <h1>My Recovery Plan</h1>
+        <Accordion items={accordionItems} />
+      </div>
+    </div>
   );
 }
+
