@@ -1,11 +1,17 @@
 "use client";
 
 import React, { useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import styles from "./Video-component.module.css";
 
 export default function VideoComponent() {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const router = useRouter();
+
+  const handleVideoEnd = () => {
+    router.push("/recover-plan/step-two");
+  };
 
   const handlePlayPause = () => {
     if (!videoRef.current) return;
@@ -38,6 +44,7 @@ export default function VideoComponent() {
         controls={false}
         width="408"
         height="704"
+        onEnded={handleVideoEnd}
       />
       <div className={styles.overlay}>
         {/* Background SVG */}
