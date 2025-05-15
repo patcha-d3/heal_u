@@ -1,10 +1,10 @@
-import VideoComponent from "../../ui/Video-component/Video-component";
-import ButtonBack from "../../ui/Button-back/Button-back";
-import VideoProgress from "../../ui/VideoProgress/Videoprogress";
+import VideoComponent from "../../../ui/Video-component/Video-component";
+import ButtonBack from "../../../ui/Button-back/Button-back";
+import VideoProgress from "../../../ui/VideoProgress/Videoprogress";
 
 export default function SomePage() {
-  const currentStep = 1; // or get this from props/state
-  const totalSteps = 6; // or get this from props/state
+  const currentStep = 1; 
+  const totalSteps = 6; 
 
   return (
     <div className="relative h-full">
@@ -16,3 +16,4 @@ export default function SomePage() {
     </div>
   );
 }
+
