@@ -1,5 +1,9 @@
-import Accordion from "../../ui/Accordion/Accordion";
-import styles from "../../ui/Accordion/Accordion.module.css";
+"use client";
+
+import React, { useState } from "react";
+import Link from "next/link";
+import Button from "../ui/Button/Button";
+
 
 export default function HomePage() {
   const accordionItems = [
@@ -22,12 +26,18 @@ export default function HomePage() {
   ];
 
   return (
-    <main
-      className="flex min-h-screen flex-col items-center justify-center p-4"
-      style={{ backgroundColor: "#29424D" }}
-    >
-      <h1 className={styles.headingText}>Hi, Rachel!</h1>
-      <Accordion items={accordionItems} />
+    <main className="flex min-h-screen flex-col items-center justify-center p-4">
+	  <h1 className="text-4xl font-bold mb-8">Welcome to Heal U</h1>
+
+
+      <Link href="/home">
+        <Button
+          text="Go to Home Page"
+          onClick={() => {}}
+          fullWidth={false}
+          outlined={true}
+        />
+      </Link>
     </main>
   );
 }
