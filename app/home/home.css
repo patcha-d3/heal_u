@@ -33,3 +33,10 @@ html, body {
     text-align: left;
     margin-left: 36px;
 }
+
+.painLevelWidget {
+  width: 404px;
+  height: 132px;
+  border-radius: 24px;
+  background: #F8F3EC;
+}

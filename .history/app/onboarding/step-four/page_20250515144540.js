@@ -29,9 +29,7 @@ export default function RootPage() {
 			/>
 			<ButtonForward
 				className='absolute bottom-[48px] right-[11px]'
-				onClick={() =>
-					router.push("/onboarding/step-three")
-				}
+				onClick={() => router.push("/home-page")}
 			/>
 			<main className='h-full flex flex-col px-4 py-[18px]'>
 				<SurveyProgress

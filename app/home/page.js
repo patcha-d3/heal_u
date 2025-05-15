@@ -1,6 +1,8 @@
 import "./home.css";
 import "./home.css";
+import "../../ui/PainLevelWidget/Painlevelwidget.module.css";
 import Accordion from "../../ui/Accordion/Accordion";
+import Painlevelwidget from "../../ui/PainLevelWidget/Painlevelwidget";
 
 export default function HomePage() {
   const accordionItems = [
@@ -27,11 +29,11 @@ export default function HomePage() {
     <div>
       <div className="painLevelContainer">
         <h1 className="painLevel">Hi, Rachel!</h1>
-        <div className="painLevelWidget"></div>
+        <Painlevelwidget />
       </div>
       <div className="homePageContainer">
         <h1 className="myRecoveryPlan">My Recovery Plan</h1>
-        <div className="w-[440px] h-[500px] bg-[#FDFBF9] rounded-t-[48px] px-4 py-[18px]  relative flex flex-col items-start overflow-y-auto overflow-x-hidden mx-auto">
+        <div className="w-[440px] h-[450px] bg-[#FDFBF9] rounded-t-[48px] px-4 py-[18px]  relative flex flex-col items-start overflow-y-auto overflow-x-hidden mx-auto">
           <Accordion items={accordionItems} />
         </div>
       </div>
