@@ -41,24 +41,22 @@ export default function SomePage() {
 
         {/* What's Next */}
         <div className="w-full max-w-md">
-          <p className="font-bold mb-4" style={{ color: "#2E2E30" }}>
+          <p className="font-bold mb-2" style={{ color: "#2E2E30" }}>
             What's Next?
           </p>
-          <div className="flex flex-col w-full space-y-4">
-            <Button
-              classname="font-bold text-center"
-              text="Keep Going: Lower Back"
-              className="w-full py-4 rounded-full font-bold text-lg"
-            />
-            <Button
-              classname="font-bold text-center"
-              text="Go to Main"
-              outlined
-              className="w-full py-4 rounded-full font-bold text-lg"
-            />
-          </div>
+          <Button
+            classname="font-bold items-center"
+            text="Keep Going: Lower Back"
+            className="font-bold"
+          />
+          <Button
+            classname="font-bold items-center"
+            text="Go to Main"
+            outlined
+            className="mt-12 font-bold"
+          />
         </div>
       </main>
-    </div> 
+    </div>
   );
-}
+} 
