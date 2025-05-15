@@ -56,7 +56,7 @@ export default function VideoComponent() {
               className={styles.controlBtn}
               aria-label="Backward"
             >
-              <img src="./icons/backward.svg" alt="Backward" />
+              <img src="../icons/backward.svg" alt="Backward" />
             </button>
           </div>
           <div className={styles.centerBtn}>
@@ -66,7 +66,7 @@ export default function VideoComponent() {
     aria-label={isPlaying ? "Pause" : "Play"}
   >
     <img
-      src={isPlaying ? "./icons/pause.svg" : "./icons/play.svg"}
+      src={isPlaying ? "../icons/pause.svg" : "../icons/play.svg"}
       alt={isPlaying ? "Pause" : "Play"}
     />
   </button>
@@ -77,7 +77,7 @@ export default function VideoComponent() {
               className={styles.controlBtn}
               aria-label="Forward"
             >
-              <img src="./icons/forward.svg" alt="Forward" />
+              <img src="../icons/forward.svg" alt="Forward" />
             </button>
           </div>
         </div>
