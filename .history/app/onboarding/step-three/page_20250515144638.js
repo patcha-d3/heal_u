@@ -40,7 +40,9 @@ export default function StepThreePage() {
 				</p>
 				<Button
 					text='View My Plan'
-					onClick={() => router.push("/home")}
+					onClick={() =>
+						router.push("/home-page")
+					}
 					fullWidth={true}
 					className='text-lg font-bold py-4 rounded-2xl'
 				/>
