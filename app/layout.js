@@ -26,7 +26,7 @@ const roboto = Roboto({
 
 export default function RootLayout({ children }) {
 	const pathname = usePathname();
-	const showBottomNav = !pathname?.includes("/onboarding") && !pathname?.startsWith("/recovery-plan/step-one");
+	const showBottomNav = !pathname?.includes("/onboarding") && !pathname?.startsWith("/recovery-plan/step-one") && !pathname?.startsWith("/recovery-plan/step-two");
 	const isStepOne = pathname?.includes("/onboarding/step-one");
 	const isStepTwo = pathname?.includes("/onboarding/step-two");
 	const isStepThree = pathname?.includes("/onboarding/step-three");
