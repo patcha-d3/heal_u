@@ -1,31 +1,22 @@
-.wrapper {
-	height: 100vh; /* Full viewport height */
-	width: 100vw; /* Full viewport width */
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: #f9f9f9; /* optional light background */
-	user-select: none;
-}
-
 .sliderContainer {
 	position: relative;
-	height: 485px;
+	height: 485px; /* Or adjust to fit your layout */
 	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 20px 0;
+	padding: 30px 0;
+	box-sizing: border-box;
 }
 
 .sliderTrack {
 	position: relative;
 	width: 32px;
-	height: calc(100% + 24px);
+	height: 100%;
 	background-color: transparent;
-	border: 3px solid #29424d;
+	border: 3px solid #29424d; /* This is your outline */
 	border-radius: 16px;
-	margin-top: 12px;
+	box-sizing: border-box; /* Ensures padding/border are inside height */
 }
 
 .sliderFill {
@@ -50,12 +41,12 @@
 
 .marks {
 	position: absolute;
-	right: -24px;
-	height: calc(100% - 60px);
+	top: 0;
+	right: -70px; /* Adjust spacing as needed */
+	height: 100%; /* Match the sliderTrack height */
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	margin: 30px 0;
 }
 
 .mark {

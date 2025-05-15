@@ -9,13 +9,6 @@ export default function Verticalslider({ onChange, value }) {
 	const [sliderHeight, setSliderHeight] = useState(0);
 	const [sliderTop, setSliderTop] = useState(0);
 
-	const marks = [
-		{ value: 0, label: "0-2 hours" },
-		{ value: 1, label: "3-5 hours" },
-		{ value: 2, label: "6-8 hours" },
-		{ value: 3, label: "9+ hours" },
-	];
-
 	useEffect(() => {
 		if (sliderRef.current) {
 			const height = sliderRef.current.offsetHeight;
@@ -50,14 +43,14 @@ export default function Verticalslider({ onChange, value }) {
 			0,
 			Math.min(1, 1 - y / rect.height)
 		);
-		const value = Math.round(percentage * 3);
-
-		onChange(value);
+		const val = Math.round(percentage * (marks.length - 1)); // ✅ Now marks is accessible
+		onChange(val);
 	};
 
-	const getPosition = () => {
-		const position = (value / 3) * 100;
-		return `${Math.max(0, Math.min(100, position))}%`;
+	const getPosition = (val) => {
+		const steps = marks.length - 1;
+		const position = (val / steps) * 100;
+		return `${position}%`;
 	};
 
 	return (
@@ -72,11 +65,11 @@ export default function Verticalslider({ onChange, value }) {
 			<div className={styles.sliderTrack}>
 				<div
 					className={styles.sliderFill}
-					style={{ height: getPosition() }}
+					style={{ height: getPosition(value) }}
 				/>
 				<div
 					className={styles.sliderThumb}
-					style={{ bottom: getPosition() }}
+					style={{ bottom: getPosition(value) }}
 				/>
 			</div>
 			<div className={styles.marks}>

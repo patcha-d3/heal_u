@@ -55,10 +55,7 @@ export default function Verticalslider({ onChange, value }) {
 		onChange(value);
 	};
 
-	const getPosition = () => {
-		const position = (value / 3) * 100;
-		return `${Math.max(0, Math.min(100, position))}%`;
-	};
+	const position = (value / (marks.length - 1)) * 100;
 
 	return (
 		<div

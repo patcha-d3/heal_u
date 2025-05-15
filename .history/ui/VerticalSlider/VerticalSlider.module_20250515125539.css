@@ -10,68 +10,83 @@
 
 .sliderContainer {
 	position: relative;
+	width: 30px;
 	height: 485px;
-	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 20px 0;
+	cursor: pointer;
 }
 
 .sliderTrack {
 	position: relative;
-	width: 32px;
-	height: calc(100% + 24px);
-	background-color: transparent;
-	border: 3px solid #29424d;
+	width: 30px;
+	height: 100%;
+	background-color: #e0e0e0;
 	border-radius: 16px;
-	margin-top: 12px;
-}
-
-.sliderFill {
-	display: none;
+	border: 3px solid #29424d;
+	box-sizing: border-box;
+	overflow: hidden;
 }
 
 .sliderThumb {
 	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
 	width: 24px;
 	height: 24px;
 	background-color: #29424d;
 	border-radius: 50%;
+	left: 50%;
+	transform: translateX(-50%);
 	cursor: grab;
 	transition: bottom 0.1s ease;
-}
-
-.sliderThumb:active {
-	cursor: grabbing;
+	box-shadow: 0 0 6px rgba(41, 66, 77, 0.8);
+	touch-action: none;
+	z-index: 2;
 }
 
 .marks {
 	position: absolute;
-	right: -24px;
-	height: calc(100% - 60px);
+	top: 0;
+	right: -100px; /* space for label text */
+	height: 100%;
+	width: 100px; /* enough width for labels */
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	margin: 30px 0;
+	user-select: none;
+	z-index: 3;
+	pointer-events: none;
 }
 
 .mark {
 	display: flex;
 	align-items: center;
+	gap: 8px;
+}
+
+.markDot {
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+	background-color: #29424d;
+	flex-shrink: 0;
+	box-shadow: 0 0 4px rgba(41, 66, 77, 0.7);
+}
+
+.activeMark .markDot {
+	background-color: #007acc;
+	box-shadow: 0 0 6px rgba(0, 122, 204, 0.8);
 }
 
 .markLabel {
 	font-family: "Roboto", sans-serif;
-	font-size: 20px;
+	font-size: 16px;
 	font-weight: 700;
 	color: #29424d;
 	transition: color 0.2s ease;
 }
 
 .activeMark .markLabel {
-	color: #29424d;
-	font-weight: 700;
+	color: #007acc;
+	font-weight: 900;
 }

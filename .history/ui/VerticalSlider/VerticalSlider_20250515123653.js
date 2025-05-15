@@ -42,23 +42,21 @@ export default function Verticalslider({ onChange, value }) {
 	};
 
 	const handleDrag = (e) => {
-		if (!sliderRef.current) return;
+        if (!sliderRef.current) return;
+    
+        const rect = sliderRef.current.getBoundingClientRect();
+        const y = e.clientY - rect.top;
+        const percentage = Math.max(0, Math.min(1, 1 - y / rect.height));
+        const val = Math.round(percentage * (marks.length - 1));
+    
+        onChange(val);
+    };
 
-		const rect = sliderRef.current.getBoundingClientRect();
-		const y = e.clientY - rect.top;
-		const percentage = Math.max(
-			0,
-			Math.min(1, 1 - y / rect.height)
-		);
-		const value = Math.round(percentage * 3);
-
-		onChange(value);
-	};
-
-	const getPosition = () => {
-		const position = (value / 3) * 100;
-		return `${Math.max(0, Math.min(100, position))}%`;
-	};
+	const getPosition = (val) => {
+        const steps = marks.length - 1; // 3 for 4 values
+        const position = (val / steps) * 100;
+        return `${position}%`;
+    };
 
 	return (
 		<div
@@ -70,15 +68,14 @@ export default function Verticalslider({ onChange, value }) {
 			onMouseLeave={handleMouseUp}
 		>
 			<div className={styles.sliderTrack}>
-				<div
-					className={styles.sliderFill}
-					style={{ height: getPosition() }}
-				/>
-				<div
-					className={styles.sliderThumb}
-					style={{ bottom: getPosition() }}
-				/>
-			</div>
+            <div
+                className={styles.sliderFill}
+                style={{ height: getPosition(value) }}
+            />
+            <div
+                className={styles.sliderThumb}
+                style={{ bottom: getPosition(value) }}
+            />
 			<div className={styles.marks}>
 				{marks.map((mark) => (
 					<div

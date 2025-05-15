@@ -17,7 +17,7 @@ export default function RootPage() {
 	};
 
 	return (
-		<div className='w-[406px] h-[800px] relative'>
+		<div className='w-[406px] h-[800px] relative bg-white'>
 			<ExitChip className='absolute top-[16px] right-[16px]' />
 			<ButtonBack className='absolute bottom-[48px] left-[11px]' />
 			<ButtonForward className='absolute bottom-[48px] right-[11px]' />

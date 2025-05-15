@@ -55,10 +55,11 @@ export default function Verticalslider({ onChange, value }) {
 		onChange(value);
 	};
 
-	const getPosition = () => {
-		const position = (value / 3) * 100;
-		return `${Math.max(0, Math.min(100, position))}%`;
-	};
+	const getPosition = (val) => {
+        const steps = marks.length - 1; // 3 for 4 values
+        const position = (val / steps) * 100;
+        return `${position}%`;
+    };
 
 	return (
 		<div
@@ -70,15 +71,14 @@ export default function Verticalslider({ onChange, value }) {
 			onMouseLeave={handleMouseUp}
 		>
 			<div className={styles.sliderTrack}>
-				<div
-					className={styles.sliderFill}
-					style={{ height: getPosition() }}
-				/>
-				<div
-					className={styles.sliderThumb}
-					style={{ bottom: getPosition() }}
-				/>
-			</div>
+            <div
+	className={styles.sliderFill}
+	style={{ height: getPosition(value) }}
+/>
+<div
+	className={styles.sliderThumb}
+	style={{ bottom: getPosition(value) }}
+/>
 			<div className={styles.marks}>
 				{marks.map((mark) => (
 					<div

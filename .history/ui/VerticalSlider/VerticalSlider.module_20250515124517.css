@@ -1,0 +1,79 @@
+.sliderContainer {
+	position: relative;
+	height: 300px; /* fixed height for demo */
+	width: 60px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	user-select: none; /* prevent text selection on drag */
+	cursor: pointer;
+}
+
+.sliderTrack {
+	position: relative;
+	width: 32px;
+	height: 100%;
+	background-color: #e0e0e0;
+	border-radius: 16px;
+	border: 3px solid #29424d;
+	box-sizing: border-box;
+	overflow: hidden; /* clip content inside rounded border */
+}
+
+.sliderFill {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: #29424d;
+	transition: height 0.1s ease;
+	border-radius: 0 0 13px 13px; /* slightly smaller radius to fit inside track border */
+	box-sizing: border-box;
+	/* Adjust height to not overflow the border: subtract border thickness */
+	/* Using inset via bottom: 3px; top: auto would also work */
+	/* But for smooth animation, adjusting border radius and overflow is enough */
+}
+
+.sliderThumb {
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	background-color: #29424d;
+	border-radius: 50%;
+	left: 50%;
+	transform: translateX(-50%);
+	cursor: grab;
+	transition: bottom 0.1s ease;
+	box-shadow: 0 0 6px rgba(41, 66, 77, 0.8);
+	touch-action: none;
+	z-index: 2; /* ensure thumb is above track and fill */
+}
+
+.marks {
+	position: absolute;
+	top: 0;
+	right: -60px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	user-select: none;
+	z-index: 1;
+}
+
+.mark {
+	display: flex;
+	align-items: center;
+}
+
+.markLabel {
+	font-family: "Roboto", sans-serif;
+	font-size: 16px;
+	font-weight: 700;
+	color: #29424d;
+	transition: color 0.2s ease;
+}
+
+.activeMark .markLabel {
+	color: #007acc;
+	font-weight: 900;
+}
