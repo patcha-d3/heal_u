@@ -1,5 +1,7 @@
 import "./home.css";
+import "../../ui/PainLevelWidget/Painlevelwidget.module.css";
 import Accordion from "../../ui/Accordion/Accordion";
+import Painlevelwidget from "../../ui/PainLevelWidget/Painlevelwidget";
 
 export default function HomePage() {
   const accordionItems = [
@@ -25,7 +27,7 @@ export default function HomePage() {
     <div>
       <div className="painLevelContainer">
         <h1 className="painLevel">Hi, Rachel!</h1>
-        <div className="painLevelWidget"></div>
+        <Painlevelwidget />
       </div>
       <div className="homePageContainer">
         <h1 className="myRecoveryPlan">My Recovery Plan</h1>

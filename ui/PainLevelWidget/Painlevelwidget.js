@@ -2,7 +2,10 @@
 import React, { useState } from "react";
 import styles from "./Painlevelwidget.module.css";
 
-<div className="painLevelContainer">
-  <h1 className="painLevel">Hi, Rachel!</h1>
-  <div className="painLevelWidget"></div>
-</div>
+export default function Painlevelwidget() {
+  return (
+    <div className={styles.painLevelWidget}>
+      <h2 className={styles.todayPainLevel}>Today's Pain Level</h2>
+    </div>
+  );
+}
