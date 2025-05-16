@@ -2,28 +2,86 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #2E444E;
 }
 
 .painLevel {
     font-size: 24px;
     font-weight: 700;
-    color: #FDFBF9;
+    color: #2E444E;
     margin-bottom: 24px;
     text-align: left;
     margin-left: 36px;
 }
 
 .painLevelWidget {
-    width: 404px;
-    height: 100px;
-    background: #F8F3EC;
-    border-radius: 24px;
-    align-items: center;
+  width: 404px;
+  height: 132px;
+  background: #F8F3EC;
+  border-radius: 24px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.painLevelColLeft {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+}
+
+.painLevelColRight {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 24px;
+}
+
+.painLevelTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.painLevelTitle {
+  font-weight: bold;
+}
+
+.painLevelHelp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1.5px solid #2E444E;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 4px;
 }
 
 .todayPainLevel {
   font-size: 18px;
   font-weight: 600;
   color: #2E444E;
+}
+
+.painLevelTitle,
+.painLevelHelp,
+.painLevelColRight,
+.painLevelColLeft {
+  color: #2E444E;
+}
+
+.myRecoveryPlan {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2E444E;
+  margin-bottom: 24px;
+  text-align: left;
 }
