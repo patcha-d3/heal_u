@@ -29,11 +29,15 @@ export default function RootLayout({ children }) {
 	const showBottomNav =
 		!pathname?.includes("/onboarding") &&
 		!pathname?.startsWith("/recovery-plan/step-one") &&
-		!pathname?.startsWith("/recovery-plan/step-two");
+		!pathname?.startsWith("/recovery-plan/step-two") &&
+		!pathname?.startsWith("/recovery-plan/step-three");
 	const isStepOne = pathname?.includes("/onboarding/step-one");
 	const isStepTwo = pathname?.includes("/onboarding/step-two");
+	const isRecoveryStepOne = pathname?.includes("/recovery-plan/step-one");
+	const isRecoveryStepTwo = pathname?.includes("/recovery-plan/step-two");
 	const isStepThree = pathname?.includes("/onboarding/step-three");
 	const isStepFour = pathname?.includes("/onboarding/step-four");
+	const isHome = pathname?.includes("/home");
 	const hideNav = pathname.startsWith("/plandetail");
 	const isHome = pathname === "/home";
 
@@ -50,7 +54,9 @@ export default function RootLayout({ children }) {
 								? "bg-[#29424D]"
 								: isStepTwo ||
 								  isStepThree ||
-								  isStepFour
+								  isStepFour ||
+								  isRecoveryStepOne ||
+								  isRecoveryStepTwo
 								? "bg-white"
 								: ""
 						}`}

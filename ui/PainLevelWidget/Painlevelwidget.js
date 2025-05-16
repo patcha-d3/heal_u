@@ -7,6 +7,7 @@ import Tooltip from "../../ui/Tooltip/Tooltip";
 export default function Painlevelwidget() {
   return (
     <div className={styles.painLevelWidget}>
+
       <div className={styles.painLevelColLeft}>
         <Image
           src="/assets/pain_icon.svg"
@@ -26,6 +27,13 @@ export default function Painlevelwidget() {
         <div>
           <span>Lower Back: <span style={{ color: "#E74C3C" }}>5</span></span>
         </div>
+
+      <div className={styles.painLevelCol}>
+        {/* Left column content here */}
+      </div>
+      <div className={styles.painLevelCol}>
+        {/* Right column content here */}
+
       </div>
     </div>
   );

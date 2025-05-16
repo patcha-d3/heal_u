@@ -1,7 +1,11 @@
+"use client";
+
 import Button from "../../../ui/Button/Button";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function StepTwoPage() {
+  const router = useRouter();
   return (
     <div className="relative h-full">
       <main className="h-full flex flex-col px-4 py-[18px] items-center">
@@ -53,10 +57,10 @@ export default function StepTwoPage() {
               />
             </Button>
             <Button
-              classname="font-bold text-center"
+              className="w-full py-4 rounded-full font-bold text-lg"
               text="Go to Main"
               outlined
-              className="w-full py-4 rounded-full font-bold text-lg"
+              onClick={() => router.push("/home")}
             />
           </div>
         </div>

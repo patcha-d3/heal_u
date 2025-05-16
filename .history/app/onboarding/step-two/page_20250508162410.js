@@ -7,39 +7,24 @@ import ExitChip from "../../../ui/Exitchip/Exitchip";
 import SurveyProgress from "../../../ui/SurveyProgress/SurveyProgress";
 import ButtonBack from "../../../ui/Button-back/Button-back";
 import ButtonForward from "../../../ui/Button-forward/Button-forward";
-import { useRouter } from "next/navigation";
 
 export default function RootPage() {
-	const [selected, setSelected] = useState(null);
-	const currentStep = 4;
-	const totalSteps = 8;
-	const router = useRouter();
+  const [selected, setSelected] = useState(null);
+  const currentStep = 4;
+  const totalSteps = 8;
 
-	return (
-		<div className='w-[406px] h-[800px] relative'>
-			<ExitChip className='absolute top-[16px] right-[16px]' />
-			<ButtonBack
-				className='absolute bottom-[48px] left-[11px]'
-				onClick={() =>
-					router.push("/onboarding/step-one")
-				}
-			/>
-			<ButtonForward
-				className='absolute bottom-[48px] right-[11px]'
-				onClick={() =>
-					router.push("/onboarding/step-four")
-				}
-			/>
-			<main className='h-full flex flex-col px-4 py-[18px]'>
-				<SurveyProgress
-					currentStep={currentStep}
-					totalSteps={totalSteps}
-				/>
+  return (
+    <div className="w-[406px] h-[800px] relative">
+      <ExitChip className="absolute top-[16px] right-[16px]" />
+      <ButtonBack className="absolute bottom-[48px] left-[11px]" />
+      <ButtonForward className="absolute bottom-[48px] right-[11px]" />
+      <main className="h-full flex flex-col px-4 py-[18px]">
+        <SurveyProgress currentStep={currentStep} totalSteps={totalSteps} />
 
         {/* Image and Button Wrapper */}
         <div className="flex flex-col items-center gap-6 mt-8">
           <Image
-            src="/assets/survey-img.png"
+            src="public/assets/survey-img.png"
             alt="Survey"
             width={400}
             height={260}

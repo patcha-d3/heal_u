@@ -1,4 +1,5 @@
 import "./home.css";
+import "./home.css";
 import "../../ui/PainLevelWidget/Painlevelwidget.module.css";
 import Accordion from "../../ui/Accordion/Accordion";
 import Painlevelwidget from "../../ui/PainLevelWidget/Painlevelwidget";
@@ -17,6 +18,7 @@ export default function HomePage() {
       title: "Lower Back",
       subitems: [
         { day: 1, label: "Pelvic Tilt", status: "done" },
+        { day: 2, label: "Knee-to-Chest Stretch", status: "active" },
         { day: 2, label: "Knee-to-Chest Stretch", status: "active" },
         { day: 3, label: "Bridge Exercise", status: "pending" },
       ],
