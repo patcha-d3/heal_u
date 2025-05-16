@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import Button from "@ui/Button/Button";
-import SmallButton from "@ui/Tooltip/Tooltip";
-import Skipchip from "@ui/Skipchip/Skipchip";
+import Button from "@components/Button/Button";
+import SmallButton from "@components/Tooltip/Tooltip";
+import Skipchip from "@components/Skipchip/Skipchip";
 import { useRouter } from "next/navigation";
 
 export default function StepOnePage() {

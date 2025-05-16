@@ -35,7 +35,7 @@ const nextConfig = {
 		config.resolve.alias = {
 			...config.resolve.alias,
 			"@": path.join(__dirname, "./"),
-			"@ui": path.join(__dirname, "./ui"),
+			"@components": path.join(__dirname, "./ui"),
 			"@app": path.join(__dirname, "./app"),
 		};
 
