@@ -1,29 +1,23 @@
-html, body {
-    background-color: #29424D;
-}
+
 
 .homePageContainer {
   display: flex;
   flex-direction: column;
   justify-content: end;
   align-items: left;
+  background-color: #29424D;
 }
 
 .myRecoveryPlan {
     font-size: 24px;
     font-weight: 700;
     color: #FDFBF9;
-    margin-bottom: 18px;
     text-align: left;
     margin-left: 36px;
+    margin-top: 18px;
 }
 
-.homePageContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: left;
-  }
+
 
 .painLevel {
     font-size: 24px;
@@ -39,4 +33,7 @@ html, body {
   height: 132px;
   border-radius: 24px;
   background: #F8F3EC;
+  margin-left: 36px;
+  margin-bottom: 18px;
+
 }

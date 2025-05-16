@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #2E444E;
 }
 
 .painLevel {
@@ -25,5 +24,4 @@
 .todayPainLevel {
   font-size: 18px;
   font-weight: 600;
-  color: #2E444E;
 }

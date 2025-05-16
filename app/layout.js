@@ -32,8 +32,11 @@ export default function RootLayout({ children }) {
 		!pathname?.startsWith("/recovery-plan/step-two");
 	const isStepOne = pathname?.includes("/onboarding/step-one");
 	const isStepTwo = pathname?.includes("/onboarding/step-two");
+	const isRecoveryStepOne = pathname?.includes("/recovery-plan/step-one");
+	const isRecoveryStepTwo = pathname?.includes("/recovery-plan/step-two");
 	const isStepThree = pathname?.includes("/onboarding/step-three");
 	const isStepFour = pathname?.includes("/onboarding/step-four");
+	const isHome = pathname?.includes("/home");
 	const hideNav = pathname.startsWith("/plandetail");
 
 	return (
@@ -45,11 +48,13 @@ export default function RootLayout({ children }) {
 				<div className='min-h-screen w-full flex items-center justify-center'>
 					<div
 						className={`w-[440px] h-[956px] relative flex flex-col ${
-							isStepOne
+							isStepOne || isHome
 								? "bg-[#29424D]"
 								: isStepTwo ||
 								  isStepThree ||
-								  isStepFour
+								  isStepFour ||
+								  isRecoveryStepOne ||
+								  isRecoveryStepTwo
 								? "bg-white"
 								: ""
 						}`}
