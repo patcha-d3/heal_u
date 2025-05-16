@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
+<<<<<<< HEAD
 const path = require("path");
+=======
+const path = require('path');
+>>>>>>> 3e88c315db46a8c17bb57d567e2560c5cc49eb5b
 
 const nextConfig = {
 	webpack(config) {
@@ -31,12 +35,19 @@ const nextConfig = {
 		// Modify the file loader rule to ignore *.svg, since we have it handled now.
 		fileLoaderRule.exclude = /\.svg$/i;
 
+<<<<<<< HEAD
 		// Add path aliases
 		config.resolve.alias = {
 			...config.resolve.alias,
 			"@": path.join(__dirname, "./"),
 			"@ui": path.join(__dirname, "./ui"),
 			"@app": path.join(__dirname, "./app"),
+=======
+		// Add path alias resolution
+		config.resolve.alias = {
+			...config.resolve.alias,
+			'@': path.resolve(__dirname),
+>>>>>>> 3e88c315db46a8c17bb57d567e2560c5cc49eb5b
 		};
 
 		return config;
