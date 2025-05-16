@@ -25,13 +25,13 @@ export default function VideoComponent() {
 
   const handleBackward = () => {
     if (videoRef.current) {
-      videoRef.current.currentTime -= 10; 
+      videoRef.current.currentTime -= 10;
     }
   };
 
   const handleForward = () => {
     if (videoRef.current) {
-      videoRef.current.currentTime += 10; 
+      videoRef.current.currentTime += 10;
     }
   };
 
@@ -47,7 +47,6 @@ export default function VideoComponent() {
         onEnded={handleVideoEnd}
       />
       <div className={styles.overlay}>
-       
         <img
           src="/assets/background-of-playbutton.svg"
           alt=""
@@ -55,7 +54,7 @@ export default function VideoComponent() {
           aria-hidden="true"
           draggable="false"
         />
-     
+
         <div className={styles.buttonRow}>
           <div className={styles.leftBtn}>
             <button
@@ -67,17 +66,17 @@ export default function VideoComponent() {
             </button>
           </div>
           <div className={styles.centerBtn}>
-  <button
-    onClick={handlePlayPause}
-    className={`${styles.controlBtn} ${styles.playBtn}`}
-    aria-label={isPlaying ? "Pause" : "Play"}
-  >
-    <img
-      src={isPlaying ? "../icons/pause.svg" : "../icons/play.svg"}
-      alt={isPlaying ? "Pause" : "Play"}
-    />
-  </button>
-</div>
+            <button
+              onClick={handlePlayPause}
+              className={`${styles.controlBtn} ${styles.playBtn}`}
+              aria-label={isPlaying ? "Pause" : "Play"}
+            >
+              <img
+                src={isPlaying ? "../icons/pause.svg" : "../icons/play.svg"}
+                alt={isPlaying ? "Pause" : "Play"}
+              />
+            </button>
+          </div>
           <div className={styles.rightBtn}>
             <button
               onClick={handleForward}
