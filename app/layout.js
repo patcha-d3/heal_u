@@ -39,6 +39,7 @@ export default function RootLayout({ children }) {
 	const isStepFour = pathname?.includes("/onboarding/step-four");
 	const isHome = pathname?.includes("/home");
 	const hideNav = pathname.startsWith("/plandetail");
+	const isHome = pathname === "/home";
 
 	return (
 		<html lang='en'>
