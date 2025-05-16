@@ -7,8 +7,9 @@ import { usePathname } from "next/navigation";
 import { jsx as _jsxDEV } from "react/jsx-dev-runtime";
 import { Fragment as _Fragment } from "react/jsx-runtime";
 import { jsxs as _jsxsDEV } from "react/jsx-dev-runtime";
-import TopNav from "../ui/Topnav/Topnav";
-import Bottomnav from "../ui/Bottomnav/Bottomnav";
+import Navbar from "@/ui/Navbar/Navbar";
+import Bottomnav from "@/ui/Bottomnav/Bottomnav";
+import TopNav from "@/ui/Topnav/Topnav";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -63,7 +64,7 @@ export default function RootLayout({ children }) {
 						}`}
 					>
 						{!hideNav && (
-							<TopNav
+							<Navbar
 								isHome={isHome}
 							/>
 						)}
