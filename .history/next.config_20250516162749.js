@@ -1,6 +1,4 @@
 /** @type {import('next').NextConfig} */
-const path = require("path");
-
 const nextConfig = {
 	webpack(config) {
 		// Grab the existing rule that handles SVG imports
@@ -30,14 +28,6 @@ const nextConfig = {
 
 		// Modify the file loader rule to ignore *.svg, since we have it handled now.
 		fileLoaderRule.exclude = /\.svg$/i;
-
-		// Add path aliases
-		config.resolve.alias = {
-			...config.resolve.alias,
-			"@": path.join(__dirname, "./"),
-			"@ui": path.join(__dirname, "./ui"),
-			"@app": path.join(__dirname, "./app"),
-		};
 
 		return config;
 	},
