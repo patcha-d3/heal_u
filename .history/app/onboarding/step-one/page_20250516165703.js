@@ -5,21 +5,13 @@ import Button from "@ui/Button/Button";
 import SmallButton from "@ui/Tooltip/Tooltip";
 import Skipchip from "@ui/Skipchip/Skipchip";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function StepOnePage() {
 	const router = useRouter();
 
 	return (
-		<div
-			className='w-[406px] h-[800px] bg-[#FDFBF9] rounded-[48px] px-4 py-[18px] relative'
-			style={{
-				backgroundImage:
-					'url("/assets/sthetoscope 1.png")',
-				backgroundRepeat: "no-repeat",
-				backgroundPosition: "right bottom",
-				backgroundSize: "336px 382px",
-			}}
-		>
+		<div className='w-[406px] h-[800px] bg-[#FDFBF9] rounded-[48px] px-4 py-[18px] relative'>
 			<div className='absolute top-6 left-[21px]'>
 				<SmallButton tooltip='Need help?' />
 			</div>
@@ -59,6 +51,15 @@ export default function StepOnePage() {
 					</div>
 				</div>
 			</main>
+			<div className='absolute bottom-4 right-4 w-[336px] h-[382px]'>
+				<Image
+					src='/assets/sthetoscope 1.png'
+					alt='Stethoscope'
+					fill
+					style={{ objectFit: "contain" }}
+					priority
+				/>
+			</div>
 		</div>
 	);
 }
