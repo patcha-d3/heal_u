@@ -33,8 +33,9 @@ function ThemedContainer({ children }) {
 	const isHome = pathname === "/home";
 	const isStepOne = pathname === "/onboarding/step-one";
 	const isReDiagnoseFirst = pathname === "/re-diagnose";
+	const isReDiagnoseFourth = pathname === "/re-diagnose/step-four";
 	const bgColor =
-		isHome || isStepOne || isReDiagnoseFirst
+		isHome || isStepOne || isReDiagnoseFirst || isReDiagnoseFourth
 			? "#29424D"
 			: theme === "dark"
 			? "#29424D"
@@ -68,6 +69,7 @@ export default function RootLayout({ children }) {
 	const isStepThree = pathname?.includes("/onboarding/step-three");
 	const isStepFour = pathname?.includes("/onboarding/step-four");
 	const isReDiagnoseFirst = pathname === "/re-diagnose";
+	const isReDiagnoseFourth = pathname === "/re-diagnose/step-four";
 
 	return (
 		<html lang='en'>

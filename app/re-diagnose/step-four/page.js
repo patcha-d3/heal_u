@@ -19,7 +19,7 @@ export default function StepThreePage() {
 			<h1 className="text-3xl font-bold text-center mb-4 mt-8" style={{ color: "#fff" }}>
 				New Plan<br />Just for You
 			</h1>
-			<div className="w-[440px] h-[650px] bg-[#FDFBF9] rounded-[48px] px-4 py-[18px] flex flex-col items-center justify-evenly">
+			<div className="w-[440px] h-[600px] bg-[#FDFBF9] rounded-[48px] px-4 py-[18px] flex flex-col items-center justify-evenly">
 				<img
 					src='/gif/congratulations.gif'
 					alt='Congratulations'
