@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import Button from "@ui/Button/Button";
 
-export default function ReDiagnoseStepOne() {
+export default function ReDiagnosePage() {
 	const router = useRouter();
 	return (
 		<div className='min-h-screen w-full flex flex-col items-center justify-center bg-[#F8F3EC] px-4'>
@@ -11,7 +11,7 @@ export default function ReDiagnoseStepOne() {
 				Noticed a Change?
 			</h1>
 			<p className='text-center text-[#29424D] font-bold text-[20px] leading-[28px] mb-8 max-w-xs'>
-				Let’s take another look to make sure <br />
+				Let's take another look to make sure <br />
 				your recovery plan stays right for you.
 			</p>
 			<Button
