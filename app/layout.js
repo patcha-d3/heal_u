@@ -58,9 +58,9 @@ export default function RootLayout({ children }) {
 	const pathname = usePathname();
 	const isHome = pathname === "/home";
 	const isStepOne = pathname === "/onboarding/step-one";
-	const isReDiagnoseFirst = pathname === "/re-diagnose";
 	const isReDiagnoseStepOne = pathname === "/re-diagnose/step-one";
 	const isReDiagnoseStepTwo = pathname === "/re-diagnose/step-two";
+	const isReDiagnoseFourth = pathname === "/re-diagnose/step-four";
 	const hideNav = pathname.startsWith("/plandetail");
 	const showBottomNav =
 		!pathname?.includes("/onboarding") &&
@@ -74,8 +74,6 @@ export default function RootLayout({ children }) {
 	const isRecoveryStepTwo = pathname?.includes("/recovery-plan/step-two");
 	const isStepThree = pathname?.includes("/onboarding/step-three");
 	const isStepFour = pathname?.includes("/onboarding/step-four");
-	const isReDiagnoseFirst = pathname === "/re-diagnose";
-	const isReDiagnoseFourth = pathname === "/re-diagnose/step-four";
 
 	return (
 		<html lang='en'>
