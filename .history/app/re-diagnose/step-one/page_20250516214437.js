@@ -23,12 +23,12 @@ export default function ReDiagnoseStepOne() {
 					currentStep={currentStep}
 					totalSteps={totalSteps}
 				/>
-				<h2 className='text-2xl font-semibold text-[#29424D] text-center mt-4 mb-4'>
+				<h2 className='text-2xl font-semibold text-[#29424D] text-center mt-2 mb-2'>
 					When does your pain get worse?
 				</h2>
 				<div className='flex flex-col items-center gap-3 mt-2'>
 					<Image
-						src='/assets/rediagnose-survey2.png'
+						src='/assets/survey-img.png'
 						alt='Survey'
 						width={370}
 						height={180}

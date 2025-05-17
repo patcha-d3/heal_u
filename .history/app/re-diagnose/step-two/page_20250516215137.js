@@ -23,7 +23,7 @@ export default function ReDiagnoseStepTwo() {
 					currentStep={currentStep}
 					totalSteps={totalSteps}
 				/>
-				<h2 className='text-2xl font-semibold text-[#29424D] text-center mt-4 '>
+				<h2 className='text-2xl font-semibold text-[#29424D] text-center mt-4 mb-2'>
 					How active are you on a regular basis?
 				</h2>
 				<div className='flex flex-col items-center gap-5 mt-2'>

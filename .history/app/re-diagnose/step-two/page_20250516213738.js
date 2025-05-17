@@ -23,15 +23,15 @@ export default function ReDiagnoseStepTwo() {
 					currentStep={currentStep}
 					totalSteps={totalSteps}
 				/>
-				<h2 className='text-2xl font-semibold text-[#29424D] text-center mt-4 '>
+				<h2 className='text-2xl font-semibold text-[#29424D] text-center mt-2 mb-2'>
 					How active are you on a regular basis?
 				</h2>
-				<div className='flex flex-col items-center gap-5 mt-2'>
+				<div className='flex flex-col items-center gap-3 mt-2'>
 					<Image
-						src='/assets/rediagnose-survey35.png'
-						alt='Survey-re-diagnose-step-two'
-						width={370}
-						height={192}
+						src='/assets/survey-img.png'
+						alt='Survey'
+						width={320}
+						height={180}
 						className='rounded-lg'
 					/>
 					<div className='grid grid-cols-2 gap-2'>
@@ -71,23 +71,23 @@ export default function ReDiagnoseStepTwo() {
 							}
 							active={
 								selected ===
-								"I exercise 2-3 times a week"
+								"Occasionally (1-2 times/week)"
 							}
 							onClick={() =>
 								setSelected(
-									"I exercise 2-3 times a week"
+									"Occasionally (1-2 times/week)"
 								)
 							}
 						/>
 						<ButtonSurvey
-							label='I do high-intensity workouts 4+ times a week'
+							label='Rarely'
 							active={
 								selected ===
-								"I do high-intensity workouts 4+ times a week"
+								"Rarely"
 							}
 							onClick={() =>
 								setSelected(
-									"I do high-intensity workouts 4+ times a week"
+									"Rarely"
 								)
 							}
 						/>
