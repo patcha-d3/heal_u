@@ -4,23 +4,6 @@ import React, { useState, useEffect } from "react";
 
 const Verticalslider = ({ value, onChange }) => {
 	const [isDragging, setIsDragging] = useState(false);
-	const TRACK_HEIGHT = 400;
-	const THUMB_HEIGHT = 24;
-	const TRACK_PADDING = 12; // Padding to ensure thumb visibility
-
-	const calculateValue = (y, rect) => {
-		const percentage = Math.max(
-			0,
-			Math.min(
-				1,
-				y /
-					(TRACK_HEIGHT -
-						THUMB_HEIGHT -
-						2 * TRACK_PADDING)
-			)
-		);
-		return Math.round(percentage * 12); // 0-12 hours
-	};
 
 	const handleMouseDown = (e) => {
 		e.preventDefault();
@@ -42,7 +25,8 @@ const Verticalslider = ({ value, onChange }) => {
 		const slider = e.currentTarget;
 		const rect = slider.getBoundingClientRect();
 		const y = e.clientY - rect.top;
-		const newValue = calculateValue(y, rect);
+		const percentage = Math.max(0, Math.min(1, y / rect.height));
+		const newValue = Math.round(percentage * 12); // 0-12 hours
 		onChange(newValue);
 	};
 
@@ -58,7 +42,11 @@ const Verticalslider = ({ value, onChange }) => {
 			if (slider) {
 				const rect = slider.getBoundingClientRect();
 				const y = e.clientY - rect.top;
-				const newValue = calculateValue(y, rect);
+				const percentage = Math.max(
+					0,
+					Math.min(1, y / rect.height)
+				);
+				const newValue = Math.round(percentage * 12);
 				onChange(newValue);
 			}
 		};
@@ -77,45 +65,36 @@ const Verticalslider = ({ value, onChange }) => {
 		};
 	}, [isDragging, onChange]);
 
-	// Calculate position in pixels, accounting for thumb height and padding
-	const thumbPosition =
-		(value / 12) *
-			(TRACK_HEIGHT - THUMB_HEIGHT - 2 * TRACK_PADDING) +
-		TRACK_PADDING;
+	const markerPosition = `${(value / 12) * 100}%`;
 
 	return (
 		<div className='relative h-[485px] w-full flex items-center justify-center'>
 			<div
 				id='vertical-slider'
-				className='relative w-8 h-[400px] bg-transparent border-3 border-[#29424d] rounded-2xl overflow-hidden'
+				className='relative w-8 h-[400px] bg-transparent border-3 border-[#29424d] rounded-2xl'
 				onMouseDown={handleMouseDown}
 				onMouseUp={handleMouseUp}
 			>
 				<div
 					className='absolute left-1/2 -translate-x-1/2 w-6 h-6 bg-[#29424d] rounded-full cursor-grab transition-all duration-100 ease-in-out'
-					style={{ top: `${thumbPosition}px` }}
+					style={{ top: markerPosition }}
 					onMouseDown={handleMouseDown}
 				/>
 			</div>
 			<div className='absolute right-[-24px] h-[400px] flex flex-col justify-between'>
 				<div className='flex items-center'>
 					<span className='font-roboto text-xl font-bold text-[#29424d]'>
-						0-2 hours
+						12h
 					</span>
 				</div>
 				<div className='flex items-center'>
 					<span className='font-roboto text-xl font-bold text-[#29424d]'>
-						3-5 hours
+						6h
 					</span>
 				</div>
 				<div className='flex items-center'>
 					<span className='font-roboto text-xl font-bold text-[#29424d]'>
-						6-8 hours
-					</span>
-				</div>
-				<div className='flex items-center'>
-					<span className='font-roboto text-xl font-bold text-[#29424d]'>
-						9+ hours
+						0h
 					</span>
 				</div>
 			</div>

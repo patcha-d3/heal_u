@@ -4,23 +4,9 @@ import React, { useState, useEffect } from "react";
 
 const Verticalslider = ({ value, onChange }) => {
 	const [isDragging, setIsDragging] = useState(false);
-	const TRACK_HEIGHT = 400;
-	const THUMB_HEIGHT = 24;
+	const TRACK_HEIGHT = 400; // Fixed height in pixels
+	const THUMB_HEIGHT = 24; // Height of the thumb in pixels
 	const TRACK_PADDING = 12; // Padding to ensure thumb visibility
-
-	const calculateValue = (y, rect) => {
-		const percentage = Math.max(
-			0,
-			Math.min(
-				1,
-				y /
-					(TRACK_HEIGHT -
-						THUMB_HEIGHT -
-						2 * TRACK_PADDING)
-			)
-		);
-		return Math.round(percentage * 12); // 0-12 hours
-	};
 
 	const handleMouseDown = (e) => {
 		e.preventDefault();
@@ -42,7 +28,18 @@ const Verticalslider = ({ value, onChange }) => {
 		const slider = e.currentTarget;
 		const rect = slider.getBoundingClientRect();
 		const y = e.clientY - rect.top;
-		const newValue = calculateValue(y, rect);
+		// Calculate position relative to track height, accounting for thumb height and padding
+		const percentage = Math.max(
+			0,
+			Math.min(
+				1,
+				y /
+					(TRACK_HEIGHT -
+						THUMB_HEIGHT -
+						2 * TRACK_PADDING)
+			)
+		);
+		const newValue = Math.round(percentage * 12); // 0-12 hours
 		onChange(newValue);
 	};
 
@@ -58,7 +55,18 @@ const Verticalslider = ({ value, onChange }) => {
 			if (slider) {
 				const rect = slider.getBoundingClientRect();
 				const y = e.clientY - rect.top;
-				const newValue = calculateValue(y, rect);
+				const percentage = Math.max(
+					0,
+					Math.min(
+						1,
+						y /
+							(TRACK_HEIGHT -
+								THUMB_HEIGHT -
+								2 *
+									TRACK_PADDING)
+					)
+				);
+				const newValue = Math.round(percentage * 12);
 				onChange(newValue);
 			}
 		};

@@ -17,7 +17,7 @@ export default function RootPage() {
 	return (
 		<div className='w-[406px] h-[800px] relative'>
 			<ExitChip className='absolute top-[16px] right-[16px]' />
-			<div className='absolute bottom-[48px] left-0 right-0 flex justify-between px-[11px]'>
+			<div className='absolute top-[48px] left-0 right-0 flex justify-between px-[11px]'>
 				<ButtonBack
 					onClick={() =>
 						router.push(

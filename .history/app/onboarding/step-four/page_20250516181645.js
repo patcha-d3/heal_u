@@ -14,6 +14,10 @@ export default function RootPage() {
 	const totalSteps = 8;
 	const router = useRouter();
 
+	const handleSliderChange = (value) => {
+		setSelectedHours(value);
+	};
+
 	return (
 		<div className='w-[406px] h-[800px] relative'>
 			<ExitChip className='absolute top-[16px] right-[16px]' />
@@ -49,7 +53,7 @@ export default function RootPage() {
 						<Verticalslider
 							value={selectedHours}
 							onChange={
-								setSelectedHours
+								handleSliderChange
 							}
 						/>
 					</div>
