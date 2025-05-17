@@ -9,22 +9,22 @@ import { useRouter } from "next/navigation";
 export default function StepOnePage() {
 	const router = useRouter();
 
+	const handleClick = () => {
+		alert("You clicked the Button!");
+	};
+
 	return (
-		<div
-			className='w-[406px] h-[800px] bg-[#FDFBF9] rounded-[48px] px-4 py-[18px] relative'
-			style={{
-				backgroundImage:
-					'url("/assets/sthetoscope 1.png")',
-				backgroundRepeat: "no-repeat",
-				backgroundPosition: "right bottom",
-				backgroundSize: "336px 382px",
-			}}
-		>
+		<div className='w-[406px] h-[800px] bg-[#FDFBF9] rounded-[48px] px-4 py-[18px] relative bg-[url("/assets/sthetoscope 1.png")] bg-no-repeat bg-[right_bottom] bg-[length:336px_382px]'>
 			<div className='absolute top-6 left-[21px]'>
-				<SmallButton tooltip='Need help?' />
+				<SmallButton
+					onClick={() => alert("Help info")}
+					tooltip='Need help?'
+				/>
 			</div>
 			<div className='absolute top-5 right-[22px]'>
-				<Skipchip />
+				<Skipchip
+					onClick={() => alert("Skipping...")}
+				/>
 			</div>
 			<main className='h-full flex flex-col'>
 				<div className='flex-1'>
