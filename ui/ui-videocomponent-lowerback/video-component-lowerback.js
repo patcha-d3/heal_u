@@ -2,7 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import styles from "../ui-videocomponent-lowerback/video-component-lowerback";
+import styles from "@/ui/ui-videocomponent-lowerback/video-component-lowerback.css";
 
 export default function VideoComponent() {
   const videoRef = useRef(null);
@@ -40,7 +40,7 @@ export default function VideoComponent() {
       <video
         ref={videoRef}
         className={styles.video}
-        src="/assets/neck-exercise.mp4"
+        src="@/assets/lowerback.mov"
         controls={false}
         width="408"
         height="704"
