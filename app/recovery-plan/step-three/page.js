@@ -7,7 +7,6 @@ import VideoComponent from "@ui/ui-videocomponent-lowerback/video-component-lowe
 
 
 
-
 export default function stepthreePage() {
   const currentStep = 1; 
   const totalSteps = 6; 

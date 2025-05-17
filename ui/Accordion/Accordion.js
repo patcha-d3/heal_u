@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./Accordion.module.css";
+import Link from "next/link";
 
 const AccordionItem = ({ title, subitems, isOpen, onClick, onSubitemClick }) => (
   <div className={styles.accordionItem}>
@@ -24,33 +25,64 @@ const AccordionItem = ({ title, subitems, isOpen, onClick, onSubitemClick }) => 
       <div className={styles.accordionContent}>
         {subitems &&
           subitems.map((item, idx) => (
-            <div 
-              key={idx} 
-              className={`${styles.subitem} ${item.status === "active" ? styles.activeSubitem : ""}`}
-              onClick={() => item.status === "active" && onSubitemClick && onSubitemClick(item)}
-            >
-              <span className={styles.day}>D - {item.day}</span>
-              <span
-                className={
-                  item.status === "done"
-                    ? styles.done
-                    : item.status === "active"
-                    ? styles.active
-                    : styles.pending
-                }
-              >
-                {item.label}
-              </span>
-              {item.status === "done" ? (
-                <div className={styles.checkmark}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 6L9 17L4 12" stroke="#B2B2B2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+            item.link ? (
+              <Link href={item.link} key={idx}>
+                <div 
+                  className={`${styles.subitem} ${item.status === "active" ? styles.activeSubitem : ""}`}
+                  onClick={() => item.status === "active" && onSubitemClick && onSubitemClick(item)}
+                >
+                  <span className={styles.day}>D - {item.day}</span>
+                  <span
+                    className={
+                      item.status === "done"
+                        ? styles.done
+                        : item.status === "active"
+                        ? styles.active
+                        : styles.pending
+                    }
+                  >
+                    {item.label}
+                  </span>
+                  {item.status === "done" ? (
+                    <div className={styles.checkmark}>
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 6L9 17L4 12" stroke="#B2B2B2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </div>
+                  ) : (
+                    <div className={`${styles.circle} ${styles[item.status]}`} />
+                  )}
                 </div>
-              ) : (
-                <div className={`${styles.circle} ${styles[item.status]}`} />
-              )}
-            </div>
+              </Link>
+            ) : (
+              <div 
+                key={idx} 
+                className={`${styles.subitem} ${item.status === "active" ? styles.activeSubitem : ""}`}
+                onClick={() => item.status === "active" && onSubitemClick && onSubitemClick(item)}
+              >
+                <span className={styles.day}>D - {item.day}</span>
+                <span
+                  className={
+                    item.status === "done"
+                      ? styles.done
+                      : item.status === "active"
+                      ? styles.active
+                      : styles.pending
+                  }
+                >
+                  {item.label}
+                </span>
+                {item.status === "done" ? (
+                  <div className={styles.checkmark}>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 6L9 17L4 12" stroke="#B2B2B2" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                ) : (
+                  <div className={`${styles.circle} ${styles[item.status]}`} />
+                )}
+              </div>
+            )
           ))}
       </div>
     )}

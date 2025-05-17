@@ -1,0 +1,37 @@
+.vertical-slider-container {
+	position: relative;
+	height: 300px;
+	width: 100%;
+}
+
+.vertical-slider-track {
+	position: relative;
+	height: 100%;
+	width: 8px;
+	background-color: #e5e7eb;
+	border-radius: 9999px;
+	cursor: pointer;
+}
+
+.vertical-slider-marker {
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	background-color: #f27b7b;
+	border-radius: 50%;
+	left: -8px;
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+
+.vertical-slider-labels {
+	position: absolute;
+	left: -32px;
+	top: 0;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	font-size: 14px;
+	color: #4b5563;
+}
