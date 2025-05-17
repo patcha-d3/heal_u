@@ -34,7 +34,6 @@ function ThemedContainer({ children }) {
 	const isStepOne = pathname === "/onboarding/step-one";
 	const isReDiagnoseFirst = pathname === "/re-diagnose";
 	const isReDiagnoseStepOne = pathname === "/re-diagnose/step-one";
-	const isReDiagnoseStepTwo = pathname === "/re-diagnose/step-two";
 	const bgColor =
 		isHome || isStepOne || isReDiagnoseFirst
 			? "#29424D"
@@ -59,15 +58,13 @@ export default function RootLayout({ children }) {
 	const isStepOne = pathname === "/onboarding/step-one";
 	const isReDiagnoseFirst = pathname === "/re-diagnose";
 	const isReDiagnoseStepOne = pathname === "/re-diagnose/step-one";
-	const isReDiagnoseStepTwo = pathname === "/re-diagnose/step-two";
 	const hideNav = pathname.startsWith("/plandetail");
 	const showBottomNav =
 		!pathname?.includes("/onboarding") &&
 		!pathname?.startsWith("/recovery-plan/step-one") &&
 		!pathname?.startsWith("/recovery-plan/step-two") &&
 		!pathname?.startsWith("/recovery-plan/step-three") &&
-		!isReDiagnoseStepOne &&
-		!isReDiagnoseStepTwo;
+		!isReDiagnoseStepOne;
 	const isStepTwo = pathname?.includes("/onboarding/step-two");
 	const isRecoveryStepOne = pathname?.includes("/recovery-plan/step-one");
 	const isRecoveryStepTwo = pathname?.includes("/recovery-plan/step-two");

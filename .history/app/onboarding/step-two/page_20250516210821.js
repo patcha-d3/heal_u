@@ -16,28 +16,45 @@ export default function RootPage() {
 	const router = useRouter();
 
 	return (
-		<div className='w-[406px] h-[800px] flex flex-col relative'>
+		<div className='w-[406px] h-[800px] relative'>
 			<ExitChip className='absolute top-[16px] right-[16px]' />
-			<main className='flex-1 flex flex-col px-4 pt-4 pb-2'>
+			<div className='absolute bottom-[48px] left-0 right-0 flex justify-between px-[11px]'>
+				<ButtonBack
+					onClick={() =>
+						router.push(
+							"/onboarding/step-one"
+						)
+					}
+				/>
+				<ButtonForward
+					onClick={() =>
+						router.push(
+							"/onboarding/step-four"
+						)
+					}
+				/>
+			</div>
+			<main className='h-full flex flex-col px-4 py-[18px]'>
 				<SurveyProgress
 					currentStep={currentStep}
 					totalSteps={totalSteps}
 				/>
-				<h2 className='text-2xl font-semibold text-[#29424D] text-center mt-2 mb-2'>
-					How often do you experience this pain?
+				<h2 className='text-2xl font-semibold text-[#29424D] text-center'>
+					How many hours do you spend sitting per
+					day?
 				</h2>
 
 				{/* Image and Button Wrapper */}
-				<div className='flex flex-col items-center gap-3 mt-2'>
+				<div className='flex flex-col items-center gap-6 mt-8'>
 					<Image
 						src='/assets/survey-img.png'
 						alt='Survey'
-						width={320}
-						height={180}
+						width={400}
+						height={260}
 						className='rounded-lg'
 					/>
 
-					<div className='grid grid-cols-2 gap-2'>
+					<div className='grid grid-cols-2 gap-4'>
 						<ButtonSurvey
 							label='Daily'
 							active={
@@ -96,22 +113,6 @@ export default function RootPage() {
 					</div>
 				</div>
 			</main>
-			<div className='flex justify-between px-[11px] mt-8 mb-4'>
-				<ButtonBack
-					onClick={() =>
-						router.push(
-							"/onboarding/step-one"
-						)
-					}
-				/>
-				<ButtonForward
-					onClick={() =>
-						router.push(
-							"/onboarding/step-four"
-						)
-					}
-				/>
-			</div>
 		</div>
 	);
 }

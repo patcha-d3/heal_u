@@ -23,14 +23,14 @@ export default function ReDiagnoseStepOne() {
 					currentStep={currentStep}
 					totalSteps={totalSteps}
 				/>
-				<h2 className='text-2xl font-semibold text-[#29424D] text-center mt-4 mb-4'>
+				<h2 className='text-2xl font-semibold text-[#29424D] text-center mt-2 mb-2'>
 					When does your pain get worse?
 				</h2>
 				<div className='flex flex-col items-center gap-3 mt-2'>
 					<Image
-						src='/assets/rediagnose-survey2.png'
+						src='/assets/survey-img.png'
 						alt='Survey'
-						width={370}
+						width={320}
 						height={180}
 						className='rounded-lg'
 					/>
@@ -44,7 +44,7 @@ export default function ReDiagnoseStepOne() {
 						].map((label, idx) => (
 							<button
 								key={label}
-								className={`w-[396px] h-[51px] rounded-[20px]  text-lg font-bold transition-colors duration-100 flex items-center justify-center ${
+								className={`w-[396px] h-[51px] rounded-[20px] border-2 text-lg font-bold transition-colors duration-100 flex items-center justify-center ${
 									selected ===
 									label
 										? "bg-[#29424D] text-white border-[#29424D]"

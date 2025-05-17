@@ -34,7 +34,6 @@ function ThemedContainer({ children }) {
 	const isStepOne = pathname === "/onboarding/step-one";
 	const isReDiagnoseFirst = pathname === "/re-diagnose";
 	const isReDiagnoseStepOne = pathname === "/re-diagnose/step-one";
-	const isReDiagnoseStepTwo = pathname === "/re-diagnose/step-two";
 	const bgColor =
 		isHome || isStepOne || isReDiagnoseFirst
 			? "#29424D"
@@ -56,23 +55,20 @@ function ThemedContainer({ children }) {
 export default function RootLayout({ children }) {
 	const pathname = usePathname();
 	const isHome = pathname === "/home";
-	const isStepOne = pathname === "/onboarding/step-one";
-	const isReDiagnoseFirst = pathname === "/re-diagnose";
-	const isReDiagnoseStepOne = pathname === "/re-diagnose/step-one";
-	const isReDiagnoseStepTwo = pathname === "/re-diagnose/step-two";
 	const hideNav = pathname.startsWith("/plandetail");
 	const showBottomNav =
 		!pathname?.includes("/onboarding") &&
 		!pathname?.startsWith("/recovery-plan/step-one") &&
 		!pathname?.startsWith("/recovery-plan/step-two") &&
 		!pathname?.startsWith("/recovery-plan/step-three") &&
-		!isReDiagnoseStepOne &&
-		!isReDiagnoseStepTwo;
+		!isReDiagnoseStepOne;
+	const isStepOne = pathname?.includes("/onboarding/step-one");
 	const isStepTwo = pathname?.includes("/onboarding/step-two");
 	const isRecoveryStepOne = pathname?.includes("/recovery-plan/step-one");
 	const isRecoveryStepTwo = pathname?.includes("/recovery-plan/step-two");
 	const isStepThree = pathname?.includes("/onboarding/step-three");
 	const isStepFour = pathname?.includes("/onboarding/step-four");
+	const isReDiagnoseFirst = pathname === "/re-diagnose";
 
 	return (
 		<html lang='en'>

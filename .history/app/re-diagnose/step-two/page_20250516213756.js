@@ -9,10 +9,10 @@ import ButtonBack from "@ui/Button-back/Button-back";
 import ButtonForward from "@ui/Button-forward/Button-forward";
 import { useRouter } from "next/navigation";
 
-export default function RootPage() {
+export default function ReDiagnoseStepTwo() {
 	const [selected, setSelected] = useState(null);
-	const currentStep = 4;
-	const totalSteps = 8;
+	const currentStep = 3;
+	const totalSteps = 5;
 	const router = useRouter();
 
 	return (
@@ -24,10 +24,8 @@ export default function RootPage() {
 					totalSteps={totalSteps}
 				/>
 				<h2 className='text-2xl font-semibold text-[#29424D] text-center mt-2 mb-2'>
-					How often do you experience this pain?
+					How active are you on a regular basis?
 				</h2>
-
-				{/* Image and Button Wrapper */}
 				<div className='flex flex-col items-center gap-3 mt-2'>
 					<Image
 						src='/assets/survey-img.png'
@@ -36,48 +34,48 @@ export default function RootPage() {
 						height={180}
 						className='rounded-lg'
 					/>
-
 					<div className='grid grid-cols-2 gap-2'>
 						<ButtonSurvey
-							label='Daily'
+							label='I rarely exercise'
 							active={
 								selected ===
-								"Daily"
+								"I rarely exercise"
 							}
 							onClick={() =>
 								setSelected(
-									"Daily"
+									"I rarely exercise"
 								)
 							}
 						/>
 						<ButtonSurvey
-							label='3-4 times a week'
+							label='I do light activities like stretching or walking'
 							active={
 								selected ===
-								"3-4 times a week"
+								"I do light activities like stretching or walking"
 							}
 							onClick={() =>
 								setSelected(
-									"3-4 times a week"
+									"I do light activities like stretching or walking"
 								)
 							}
 						/>
 						<ButtonSurvey
 							label={
 								<>
-									Occasionally
-									<br />
-									(1-2
-									times/week)
+									I
+									exercise
+									2-3
+									times a
+									week
 								</>
 							}
 							active={
 								selected ===
-								"Occasionally (1-2 times/week)"
+								"I exercise 2-3 times a week"
 							}
 							onClick={() =>
 								setSelected(
-									"Occasionally (1-2 times/week)"
+									"I exercise 2-3 times a week"
 								)
 							}
 						/>
@@ -97,17 +95,11 @@ export default function RootPage() {
 				</div>
 			</main>
 			<div className='flex justify-between px-[11px] mt-8 mb-4'>
-				<ButtonBack
-					onClick={() =>
-						router.push(
-							"/onboarding/step-one"
-						)
-					}
-				/>
+				<ButtonBack onClick={() => router.back()} />
 				<ButtonForward
 					onClick={() =>
 						router.push(
-							"/onboarding/step-four"
+							"/re-diagnose/step-three"
 						)
 					}
 				/>
