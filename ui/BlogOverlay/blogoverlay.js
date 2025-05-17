@@ -18,13 +18,13 @@ export default function BlogOverlay({ onClose }) {
         <Image
           src="icons/New-blog.svg"
           alt="New Blog"
-          width={600}
-          height={800}
+          width={380}
+          height={510}
           className="rounded-xl"
         />
         <Button
           text="Post"
-          className="w-[360px] h-[60px] mb-8 mx-auto text-2xl font-bold"
+          className="mb-8 mx-auto text-2xl font-bold"
           onClick={() => {
             router.push("/blog-two");
           }}

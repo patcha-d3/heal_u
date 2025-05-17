@@ -80,6 +80,8 @@ export default function RootLayout({ children }) {
         !pathname?.startsWith("/recovery-plan/step-one") &&
         !pathname?.startsWith("/recovery-plan/step-two") &&
         !pathname?.startsWith("/recovery-plan/step-three") &&
+        !pathname?.startsWith("/recovery-plan/step-four") &&
+        !pathname?.startsWith("/blog") &&
         !isReDiagnoseStepOne &&
         !isReDiagnoseStepTwo;
     const isStepTwo = pathname?.includes("/onboarding/step-two");
