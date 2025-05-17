@@ -44,7 +44,7 @@ export default function ReDiagnoseStepOne() {
 						].map((label, idx) => (
 							<button
 								key={label}
-								className={`w-[396px] h-[51px] rounded-[20px]  text-lg font-bold transition-colors duration-100 flex items-center justify-center ${
+								className={`w-[396px] h-[51px] rounded-[20px] border-2 text-lg font-bold transition-colors duration-100 flex items-center justify-center ${
 									selected ===
 									label
 										? "bg-[#29424D] text-white border-[#29424D]"

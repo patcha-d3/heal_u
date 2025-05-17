@@ -36,19 +36,19 @@ export default function ReDiagnoseStepOne() {
 					/>
 					<div className='flex flex-col gap-2 w-full items-center mt-2'>
 						{[
-							"Morning (after waking up)",
-							"During physical activity",
-							"After sitting for long periods",
-							"In cold or damp weather",
-							"During stress or anxiety",
+							"Morning ()",
+							"During",
+							"After",
+							"In cold",
+							"During stress",
 						].map((label, idx) => (
 							<button
 								key={label}
-								className={`w-[396px] h-[51px] rounded-[20px]  text-lg font-bold transition-colors duration-100 flex items-center justify-center ${
+								className={`w-[396px] h-[51px] rounded-[20px] border-2 text-lg font-bold transition-colors duration-100 flex items-center justify-center ${
 									selected ===
 									label
 										? "bg-[#29424D] text-white border-[#29424D]"
-										: "bg-[#CFC4F4] text-[#29424D] border-[#29424D]"
+										: "bg-white text-[#29424D] border-[#29424D]"
 								}`}
 								onClick={() =>
 									setSelected(
