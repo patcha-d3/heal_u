@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import ExitChip from "@ui/Exitchip/Exitchip";
-import SurveyProgress from "@ui/SurveyProgress/SurveyProgress";
+import SurveyProgress from "@ui/Surveyprogress/SurveyProgress";
 import ButtonBack from "@ui/Button-back/Button-back";
 import ButtonForward from "@ui/Button-forward/Button-forward";
 import Verticalslider from "@ui/Verticalslider/Verticalslider";
@@ -10,9 +10,13 @@ import { useRouter } from "next/navigation";
 
 export default function RootPage() {
 	const [selectedHours, setSelectedHours] = useState(0);
-	const currentStep = 4;
+	const currentStep = 6;
 	const totalSteps = 8;
 	const router = useRouter();
+
+	const handleSliderChange = (value) => {
+		setSelectedHours(value);
+	};
 
 	return (
 		<div className='w-[406px] h-[800px] relative'>
@@ -21,14 +25,14 @@ export default function RootPage() {
 				<ButtonBack
 					onClick={() =>
 						router.push(
-							"/onboarding/step-two"
+							"/onboarding/step-three"
 						)
 					}
 				/>
 				<ButtonForward
 					onClick={() =>
 						router.push(
-							"/onboarding/step-three"
+							"/onboarding/step-five"
 						)
 					}
 				/>
@@ -49,7 +53,7 @@ export default function RootPage() {
 						<Verticalslider
 							value={selectedHours}
 							onChange={
-								setSelectedHours
+								handleSliderChange
 							}
 						/>
 					</div>
