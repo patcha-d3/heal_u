@@ -14,7 +14,7 @@ import SettingsIcon from "../../public/icons/settings.svg";
 
 const menuItems = [
 	{ label: "Home", icon: HomeIcon, path: "/home" },
-	{ label: "Re-Diagnose", icon: RediagnoseIcon, path: "/re-diagnose" },
+	{ label: "Re-Diagnose", icon: RediagnoseIcon, path: "/onboarding/step-one" },
 	{ label: "Progress", icon: ProgressIcon, path: "/progress" },
 	{ label: "Blog", icon: BlogIcon, path: "/blog" },
 	{ label: "Settings", icon: SettingsIcon, path: "/settings" },
