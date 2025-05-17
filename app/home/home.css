@@ -45,7 +45,9 @@ body, html {
 .recoveryPlanHeader {
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
   gap: 12px;
+  width: 100%;
 }
 
 .planBadge {
