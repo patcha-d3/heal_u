@@ -21,11 +21,11 @@ export default function LandingPage() {
 			</p>
 			<Button
 				text='Get Started'
-				fullWidth={false}
+				fullWidth={true}
 				onClick={() =>
 					router.push("/onboarding/step-one")
 				}
-				className='py-3 w-48'
+				className='py-3'
 			/>
 		</div>
 	);

@@ -13,11 +13,10 @@ export default function LandingPage() {
 			<p className='text-center text-[#29424D] text-lg font-medium mb-8 max-w-xs'>
 				Personalized pain management
 				<br />
-				Improve your posture and reduce discomfort
+				improve posture. Discomfort through <br />
+				targeted exercises plans.
 				<br />
-				with targeted exercise plans.
-				<br />
-				Let's get you onboard!
+				Track your progress!
 			</p>
 			<Button
 				text='Get Started'
@@ -25,7 +24,6 @@ export default function LandingPage() {
 				onClick={() =>
 					router.push("/onboarding/step-one")
 				}
-				className='py-3 w-48'
 			/>
 		</div>
 	);
