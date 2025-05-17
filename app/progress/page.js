@@ -10,8 +10,8 @@ export default function LandingPage() {
                    <Image
                     src="/assets/progress.svg"
                     alt="progress"
-                    width={440}   // set your desired width in px
-                    height={700}  // set your desired height in px
+                    width={440}   
+                    height={700} 
                     className="ml-2 mt-0"
                 />
                    
