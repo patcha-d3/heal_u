@@ -46,7 +46,8 @@ export default function StepTwoPage() {
             What's Next?
           </p>
           <div className="flex flex-col w-[320px] space-y-4 ">
-            <Button className="rounded-full font-bold text-lg w-[90%] mx-auto flex items-center justify-center">
+            <Button className="rounded-full font-bold text-lg w-[90%] mx-auto flex items-center justify-center" 
+             onClick={() => router.push("/recovery-plan/step-three")}>
               Keep Going: Lower Back
               <Image
                 src="../icons/next-errow.svg"
