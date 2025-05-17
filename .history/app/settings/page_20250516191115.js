@@ -57,7 +57,11 @@ export default function SettingsPage() {
 			</h2>
 			<div className='flex flex-row gap-6 mb-2'>
 				<div
-					className={`flex flex-col items-center cursor-pointer`}
+					className={`flex flex-col items-center cursor-pointer ${
+						theme === "light"
+							? "ring-2 ring-[#29424D]"
+							: ""
+					}`}
 					onClick={() => setTheme("light")}
 				>
 					<Image
@@ -117,30 +121,28 @@ export default function SettingsPage() {
 			<h2 className="font-['Roboto'] font-bold text-[16px] text-[#1A1A1A] mt-6 mb-2 w-full text-left">
 				Privacy Setting
 			</h2>
-			<div className='flex flex-col gap-2 w-full items-center'>
-				<SettingsCard
-					icon='/icons/gps.svg'
-					text='Allow GPS'
-					isEnabled={settings.gps}
-					onToggle={() => handleToggle("gps")}
-				/>
-				<SettingsCard
-					icon='/icons/sync.svg'
-					text='Sync to other health app'
-					isEnabled={settings.sync}
-					onToggle={() => handleToggle("sync")}
-				/>
-				<SettingsCard
-					icon='/icons/delete.svg'
-					text='Delete all progress & Data'
-					hasSwitch={false}
-				/>
-				<SettingsCard
-					icon='/icons/signout.svg'
-					text='Sign Out'
-					hasSwitch={false}
-				/>
-			</div>
+			<SettingsCard
+				icon='/icons/gps.svg'
+				text='Allow GPS'
+				isEnabled={settings.gps}
+				onToggle={() => handleToggle("gps")}
+			/>
+			<SettingsCard
+				icon='/icons/sync.svg'
+				text='Sync to other health app'
+				isEnabled={settings.sync}
+				onToggle={() => handleToggle("sync")}
+			/>
+			<SettingsCard
+				icon='/icons/delete.svg'
+				text='Delete all progress & Data'
+				hasSwitch={false}
+			/>
+			<SettingsCard
+				icon='/icons/signout.svg'
+				text='Sign Out'
+				hasSwitch={false}
+			/>
 		</div>
 	);
 }

@@ -57,7 +57,11 @@ export default function SettingsPage() {
 			</h2>
 			<div className='flex flex-row gap-6 mb-2'>
 				<div
-					className={`flex flex-col items-center cursor-pointer`}
+					className={`flex flex-col items-center cursor-pointer ${
+						theme === "light"
+							? "ring-2 ring-[#29424D]"
+							: ""
+					}`}
 					onClick={() => setTheme("light")}
 				>
 					<Image

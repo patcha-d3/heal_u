@@ -29,20 +29,16 @@ const roboto = Roboto({
 
 function ThemedContainer({ children }) {
 	const { theme } = useTheme();
-	const pathname = usePathname();
-	const isHome = pathname === "/home";
-	const isStepOne = pathname === "/onboarding/step-one";
-	const bgColor =
-		isHome || isStepOne
-			? "#29424D"
-			: theme === "dark"
-			? "#29424D"
-			: "#FFFFFF";
 	return (
 		<div className='min-h-screen w-full flex items-center justify-center'>
 			<div
 				className={`w-[440px] h-[956px] relative flex flex-col`}
-				style={{ background: bgColor }}
+				style={{
+					background:
+						theme === "dark"
+							? "#29424D"
+							: "#FFFFFF",
+				}}
 			>
 				{children}
 			</div>
