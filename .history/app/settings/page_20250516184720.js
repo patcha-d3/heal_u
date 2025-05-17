@@ -55,7 +55,7 @@ export default function SettingsPage() {
 			<div className='flex flex-row gap-6 mb-2'>
 				<div className='flex flex-col items-center'>
 					<Image
-						src='/assets/lightmode.png'
+						src='/lightmode.png'
 						alt='Light mode'
 						width={120}
 						height={90}
@@ -67,7 +67,7 @@ export default function SettingsPage() {
 				</div>
 				<div className='flex flex-col items-center'>
 					<Image
-						src='/assets/darkmode.png'
+						src='/darkmode.png'
 						alt='Dark mode'
 						width={120}
 						height={90}
