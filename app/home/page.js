@@ -32,7 +32,10 @@ export default function HomePage() {
         <Painlevelwidget />
       </div>
       <div className="homePageContainer">
-        <h1 className="myRecoveryPlan">My Recovery Plan</h1>
+        <div className="recoveryPlanHeader">
+          <h1 className="myRecoveryPlan">My Recovery Plan</h1>
+          <span className="planBadge">14 Days Plan</span>
+        </div>
         <div className="w-[440px] h-[450px] bg-[#FDFBF9] rounded-t-[48px] px-4 py-[18px]  relative flex flex-col items-start overflow-y-auto overflow-x-hidden mx-auto">
           <Accordion items={accordionItems} />
         </div>
