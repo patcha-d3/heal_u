@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./video-component-lowerback.module.css";
 
+
 export default function lowerBackVideo() {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
