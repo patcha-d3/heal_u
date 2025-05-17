@@ -32,13 +32,25 @@ function ThemedContainer({ children }) {
     const pathname = usePathname();
     const isHome = pathname === "/home" || pathname === "/home/lowerback" || pathname === "/home/neck";
     const isStepOne = pathname === "/onboarding/step-one";
+    const isStepTwo = pathname === "/onboarding/step-two";
+    const isStepThree = pathname === "/onboarding/step-three";
+    const isStepFour = pathname === "/onboarding/step-four";
+    const isProgress = pathname === "/progress";
     const isReDiagnoseFirst = pathname === "/re-diagnose";
     const isReDiagnoseFourth = pathname === "/re-diagnose/step-four";
     const isReDiagnoseStepOne = pathname === "/re-diagnose/step-one";
     const isReDiagnoseStepTwo = pathname === "/re-diagnose/step-two";
+    const isRecoveryStepOne = pathname === "/recovery-plan/step-one";
+    const isRecoveryStepTwo = pathname === "/recovery-plan/step-two";
+    const isRecoveryStepThree = pathname === "/recovery-plan/step-three";
+    const isRecoveryStepFour = pathname === "/recovery-plan/step-four";
     const bgColor =
         isHome || isStepOne || isReDiagnoseFirst || isReDiagnoseFourth
             ? "#29424D"
+            : isRecoveryStepOne || isRecoveryStepTwo || isRecoveryStepThree || isRecoveryStepFour
+            ? "#FFFFFF"
+            : isStepTwo || isStepThree || isStepFour || isProgress
+            ? "#FFFFFF"
             : theme === "dark"
             ? "#29424D"
             : "#FFFFFF";
