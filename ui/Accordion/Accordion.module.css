@@ -1,19 +1,18 @@
 .accordionButton {
-  width: 404px;
+  width: 408px;
   height: 80px;
   text-align: left;
   padding: 1em;
   font-weight: bold;
   background: #cfc4f4;
-  background: #cfc4f4;
   border: none;
   outline: none;
+  cursor: pointer;
   border-radius: 24px;
   color: black;
   font-size: 16px;
   display: flex;
   align-items: center;
-  box-sizing: border-box;
 }
 
 .accordionContent {
@@ -53,21 +52,11 @@
   border-radius: 50%;
   position: absolute;
   right: 16px;
-}
-
-.circle.done {
-  background-color: #fff;
-  border: 1px solid #B2B2B2;
-}
-
-.circle.active {
   background-color: #fff;
   border: 1px solid #B2B2B2;
 }
 
 .circle.pending {
-  background-color: #fff;
-  border: 1px solid #B2B2B2;
   opacity: 0.5;
 }
 
@@ -80,7 +69,6 @@
 .activeSubitem:hover {
   background-color: #F8F3EC;
 }
-
 
 .day {
   display: flex;
@@ -97,15 +85,15 @@
   align-items: center;
   height: 25px;
 }
-.done {
-  display: flex;
-  align-items: center;
+
+.done, .pending {
   display: flex;
   align-items: center;
   font-weight: bold;
   padding: 4px 8px;
   color: #b0b0b0;
 }
+
 .active {
   font-weight: bold;
   background: #f7f4ef;
@@ -113,40 +101,10 @@
   padding: 4px 8px;
 }
 
-
-.pending {
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  font-weight: bold;
-  color: #b0b0b0;
-  padding: 4px 8px;
-}
-
-.accordionButton {
-  width: 408px;
-  height: 80px;
-  text-align: left;
-  padding: 1em;
-  font-weight: bold;
-  background: #cfc4f4;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  border-radius: 24px;
-  color: black;
-  font-size: 16px;
-
-  display: flex;
-  align-items: center;
-}
-
 .titleWrapper {
   display: flex;
   align-items: center;
-  gap: 8px; /* space between title and arrow */
+  gap: 8px;
 }
 
 .arrow {
