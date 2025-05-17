@@ -7,9 +7,9 @@ import { usePathname } from "next/navigation";
 import { jsx as _jsxDEV } from "react/jsx-dev-runtime";
 import { Fragment as _Fragment } from "react/jsx-runtime";
 import { jsxs as _jsxsDEV } from "react/jsx-dev-runtime";
-import TopNav from "@ui/Topnav/Topnav";
-import Bottomnav from "@ui/Bottomnav/Bottomnav";
-import { ThemeProvider, useTheme } from "@context/ThemeContext";
+import TopNav from "../ui/Topnav/Topnav";
+import Bottomnav from "../ui/Bottomnav/Bottomnav";
+import { ThemeProvider, useTheme } from "../context/ThemeContext";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -29,20 +29,16 @@ const roboto = Roboto({
 
 function ThemedContainer({ children }) {
 	const { theme } = useTheme();
-	const pathname = usePathname();
-	const isHome = pathname === "/home";
-	const isStepOne = pathname === "/onboarding/step-one";
-	const bgColor =
-		isHome || isStepOne
-			? "#29424D"
-			: theme === "dark"
-			? "#29424D"
-			: "#FFFFFF";
 	return (
 		<div className='min-h-screen w-full flex items-center justify-center'>
 			<div
 				className={`w-[440px] h-[956px] relative flex flex-col`}
-				style={{ background: bgColor }}
+				style={{
+					background:
+						theme === "dark"
+							? "#29424D"
+							: "#FFFFFF",
+				}}
 			>
 				{children}
 			</div>
