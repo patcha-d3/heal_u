@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import "./home.css";
-import "../../ui/PainLevelWidget/Painlevelwidget.module.css";
-import Accordion from "../../ui/Accordion/Accordion";
-import Painlevelwidget from "../../ui/PainLevelWidget/Painlevelwidget";
-import Filter from "../../ui/Filter/Filter";
-import FilterPopup from "../../ui/Filter/Filter-popup";
+import "../home.css";
+import "../../../ui/PainLevelWidget/Painlevelwidget.module.css";
+import Accordion from "../../../ui/Accordion/Accordion";
+import Painlevelwidget from "../../../ui/PainLevelWidget/Painlevelwidget";
+import Filter from "../../../ui/Filter/Filter";
+import FilterPopup from "../../../ui/Filter/Filter-popup";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,7 +18,7 @@ export default function HomePage() {
       title: "Neck",
       subitems: [
         { day: 1, label: "Neck Rotations", status: "done" },
-        { day: 2, label: "Neck Stretch", status: "active", link: "/recovery-plan/step-one" },
+        { day: 2, label: "Neck Stretch", status: "done" },
         { day: 3, label: "Side-to-Side Neck Stretch", status: "pending" },
       ],
     },

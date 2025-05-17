@@ -1,60 +1,34 @@
 "use client";
 
-import React, { useState } from "react";
-import ExitChip from "@ui/Exitchip/Exitchip";
-import SurveyProgress from "@ui/SurveyProgress/SurveyProgress";
-import ButtonBack from "@ui/Button-back/Button-back";
-import ButtonForward from "@ui/Button-forward/Button-forward";
-import Verticalslider from "@ui/Verticalslider/Verticalslider";
-import { useRouter } from "next/navigation";
+import React from "react";
+import Image from "next/image";
+import styles from "./stepFour.module.css";
 
-export default function RootPage() {
-	const [selectedHours, setSelectedHours] = useState(0);
-	const currentStep = 4;
-	const totalSteps = 8;
-	const router = useRouter();
-
+export default function StepFour() {
 	return (
-		<div className='w-[406px] h-[800px] relative'>
-			<ExitChip className='absolute top-[16px] right-[16px]' />
-			<div className='absolute bottom-[48px] left-0 right-0 flex justify-between px-[11px]'>
-				<ButtonBack
-					onClick={() =>
-						router.push(
-							"/onboarding/step-two"
-						)
-					}
-				/>
-				<ButtonForward
-					onClick={() =>
-						router.push(
-							"/onboarding/step-three"
-						)
-					}
-				/>
+		<div className={styles.pageBg}>
+			<div className={styles.header}>
+				<h1 className={styles.title}>
+					New Plan<br />Just for You
+				</h1>
 			</div>
-			<main className='h-full flex flex-col px-4 py-[18px]'>
-				<SurveyProgress
-					currentStep={currentStep}
-					totalSteps={totalSteps}
-				/>
-
-				<div className='flex flex-col items-center gap-6 mt-8'>
-					<h2 className='text-2xl font-semibold text-[#29424D] text-center'>
-						How many hours do you spend
-						sitting per day?
-					</h2>
-
-					<div className='w-full max-w-[300px]'>
-						<Verticalslider
-							value={selectedHours}
-							onChange={
-								setSelectedHours
-							}
-						/>
-					</div>
+			<div className={styles.card}>
+				<div className={styles.imageWrapper}>
+					<Image
+						src="/assets/your-character.svg" // Update with your actual image path
+						alt="Character"
+						width={180}
+						height={180}
+						priority
+					/>
 				</div>
-			</main>
+				<div className={styles.description}>
+					Your tailored plan has been refreshed to better match your current needs.<br />
+					View it now to continue your progress.
+				</div>
+				<button className={styles.ctaBtn}>View My New Plan</button>
+			</div>
+			{/* Your bottom nav goes here */}
 		</div>
 	);
 }
