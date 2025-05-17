@@ -20,6 +20,7 @@ export default function StepThreePage() {
 				New Plan<br />Just for You
 			</h1>
 			<div className="w-[440px] h-[600px] bg-[#FDFBF9] rounded-[48px] px-4 py-[18px] flex flex-col items-center justify-evenly">
+
 				<img
 					src='/gif/congratulations.gif'
 					alt='Congratulations'
