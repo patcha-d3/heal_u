@@ -21,7 +21,7 @@ export default function Painlevelwidget() {
           <Tooltip content="This shows your current pain level." />
         </div>
         <div>
-          <span>Neck : <span style={{ color: "#3CB371" }}>3</span></span>
+          <span>Neck: <span style={{ color: "#3CB371" }}>3</span></span>
         </div>
         <div>
           <span>Lower Back: <span style={{ color: "#E74C3C" }}>5</span></span>

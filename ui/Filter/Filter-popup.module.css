@@ -11,19 +11,98 @@
 .popup {
   background: #fff;
   border-radius: 16px;
-  padding: 32px 24px;
-  min-width: 300px;
-  min-height: 200px;
+  border: 1px solid #333333;
+  width: 420px;
+  height: 526px;
   position: relative;
   box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #333333;
+  padding: 24px 24px 12px 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333333;
 }
 
 .closeButton {
-  position: absolute;
-  top: 12px;
-  right: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: none;
-  border: none;
-  font-size: 24px;
+  border: 1px solid black;
+  padding: 4px;
+  border-radius: 24px;
+  width: 32px;
+  height: 32px;
+  font-size: 32px;
   cursor: pointer;
+  color: #263238;
+}
+
+.section {
+  padding: 24px;
+  padding-bottom: 0;
+}
+
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 8px;
+}
+
+.filterGroup {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 1rem;
+}
+
+.filterBtn {
+  border: 2px solid #263238;
+  background: #fff;
+  color: #333333;
+  border-radius: 20px;
+  padding: 4px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.filterBtn.selected,
+.filterBtn.selected:focus {
+  background: #263238;
+  color: #fff;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #263238;
+  margin: 0 24px;
+}
+
+.applyBtn {
+  margin: 24px;
+  margin-top: auto;
+  border: 2px solid #333333;
+  border-radius: 16px;
+  background: #fff;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 0;
+  width: calc(100% - 48px);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
 } 
