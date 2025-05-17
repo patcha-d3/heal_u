@@ -1,8 +1,9 @@
-import VideoComponent from "../../../ui/Video-component/Video-component";
 import ButtonBack from "../../../ui/Button-back/Button-back";
 import VideoProgress from "../../../ui/VideoProgress/Videoprogress";
+import VideoComponent from "@/ui/ui-videocomponent-lowerback/video-component-lowerback";
 
-export default function stepOnePage() {
+
+export default function stepthreePage() {
   const currentStep = 1; 
   const totalSteps = 6; 
 
