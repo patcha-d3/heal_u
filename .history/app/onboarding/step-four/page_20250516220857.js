@@ -28,7 +28,7 @@ export default function StepFour() {
 				<ButtonForward
 					onClick={() =>
 						router.push(
-							"/onboarding/step-three"
+							"/onboarding/step-five"
 						)
 					}
 				/>
