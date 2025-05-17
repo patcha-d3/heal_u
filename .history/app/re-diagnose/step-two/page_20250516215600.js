@@ -99,7 +99,7 @@ export default function ReDiagnoseStepTwo() {
 				<ButtonForward
 					onClick={() =>
 						router.push(
-							"/re-diagnose/step-four"
+							"/re-diagnose/step-three"
 						)
 					}
 				/>
