@@ -49,7 +49,7 @@ export default function lowerBackVideo() {
       />
       <div className={styles.overlay}>
         <img
-          src="/assets/background-of-playbutton.svg"
+          src="/assets/background-of-playbutton-lowerback.svg"
           alt=""
           className={styles.overlayBg}
           aria-hidden="true"
