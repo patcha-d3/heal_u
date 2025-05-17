@@ -23,9 +23,33 @@ export default function Painlevelwidget() {
         <div className={styles.painLevelTitleRow}>
           <span className={styles.painLevelTitle}>Today's Pain Level</span>
           <Tooltip
-            content="This shows your current pain level."
-            onClick={handleTooltipClick}
-          />
+  content={
+    <div style={{
+      minWidth: 320,
+      borderRadius: 20,
+      background: "#fff",
+      boxShadow: "0 4px 16px 0 rgba(0,0,0,0.08)",
+      padding: 32,
+      position: "relative",
+      margin: "24px auto"
+    }}>
+      <div style={{ fontWeight: 700, fontSize: 28, color: "#263238", marginBottom: 24 }}>
+        Pain Level Scale
+      </div>
+      <div style={{ fontSize: 22, fontWeight: 500, marginBottom: 8, color: "#2E7D32" }}>
+        1 – 3 : Mild
+      </div>
+      <div style={{ fontSize: 22, fontWeight: 500, marginBottom: 8, color: "#E57373" }}>
+        4 – 6 : Moderate
+      </div>
+      <div style={{ fontSize: 22, fontWeight: 500, color: "#C62828" }}>
+        7 – 10 : Severe
+      </div>
+    </div>
+  }
+  onClick={handleTooltipClick}
+/>
+
         </div>
         <div>
           <span>Neck: <span style={{ color: "#3CB371" }}>3</span></span>
