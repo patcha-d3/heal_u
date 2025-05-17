@@ -10,16 +10,7 @@ export default function StepOnePage() {
 	const router = useRouter();
 
 	return (
-		<div
-			className='w-[406px] h-[800px] bg-[#FDFBF9] rounded-[48px] px-4 py-[18px] relative'
-			style={{
-				backgroundImage:
-					'url("/assets/sthetoscope 1.png")',
-				backgroundRepeat: "no-repeat",
-				backgroundPosition: "right bottom",
-				backgroundSize: "336px 382px",
-			}}
-		>
+		<div className='w-[406px] h-[800px] bg-[#FDFBF9] rounded-[48px] px-4 py-[18px] relative bg-[url("/assets/sthetoscope 1.png")] bg-no-repeat bg-[right_bottom] bg-[length:336px_382px]'>
 			<div className='absolute top-6 left-[21px]'>
 				<SmallButton tooltip='Need help?' />
 			</div>

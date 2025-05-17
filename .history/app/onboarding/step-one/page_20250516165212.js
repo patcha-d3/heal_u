@@ -9,17 +9,12 @@ import { useRouter } from "next/navigation";
 export default function StepOnePage() {
 	const router = useRouter();
 
+	const handleClick = () => {
+		alert("You clicked the Button!");
+	};
+
 	return (
-		<div
-			className='w-[406px] h-[800px] bg-[#FDFBF9] rounded-[48px] px-4 py-[18px] relative'
-			style={{
-				backgroundImage:
-					'url("/assets/sthetoscope 1.png")',
-				backgroundRepeat: "no-repeat",
-				backgroundPosition: "right bottom",
-				backgroundSize: "336px 382px",
-			}}
-		>
+		<div className='w-[406px] h-[800px] bg-[#FDFBF9] rounded-[48px] px-4 py-[18px] relative'>
 			<div className='absolute top-6 left-[21px]'>
 				<SmallButton tooltip='Need help?' />
 			</div>
@@ -59,6 +54,11 @@ export default function StepOnePage() {
 					</div>
 				</div>
 			</main>
+			<img
+				src='/assets/sthetoscope 1.png'
+				alt='Stethoscope'
+				className='absolute bottom-4 right-4 w-[336px] h-[382px]'
+			/>
 		</div>
 	);
 }
