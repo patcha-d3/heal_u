@@ -1,9 +1,16 @@
 .homePageContainer {
   display: flex;
   flex-direction: column;
-  justify-content: end;
-  align-items: left;
+  justify-content: flex-start;
+  align-items: flex-start;
   background-color: #29424D;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+body, html {
+  padding-top: 0;
+  margin-top: 0;
 }
 
 .myRecoveryPlan {
@@ -12,7 +19,9 @@
     color: #FDFBF9;
     text-align: left;
     margin-left: 36px;
-    margin-top: 18px;
+    margin-top: 8px;
+    line-height: 1.2;
+    margin-bottom: 4px;
 }
 
 .painLevel {
@@ -21,6 +30,7 @@
     color: #FDFBF9;
     text-align: left;
     margin-left: 36px;
+    margin-top: 8px;
 }
 
 .painLevelWidget {
@@ -34,18 +44,19 @@
 
 .recoveryPlanHeader {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 12px;
 }
 
 .planBadge {
   border: 1px solid #fff;
   border-radius: 16px;
-  padding: 2px 12px;
+  padding: 4px 8px;
   font-size: 14px;
   color: #fff;
   background: transparent;
   font-weight: 400;
-  line-height: 1.5;
   display: inline-block;
+  line-height: 1.2;
+  margin-bottom: 4px;
 }
