@@ -22,6 +22,7 @@ export default function StepTwoPage() {
             width={32}
             height={32}
             className="ml-2"
+            onClick={() => router.push("/blog")}
           />
         </div>
 
@@ -61,7 +62,7 @@ export default function StepTwoPage() {
               className="w-full py-4 rounded-full font-bold text-lg"
               text="Go to Main"
               outlined
-              onClick={() => router.push("/home")}
+              onClick={() => router.push("/home/neck")}
             />
           </div>
         </div>

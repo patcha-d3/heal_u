@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import ButtonBack from "@ui/Button-back/Button-back";
-import VideoProgress from "@ui/VideoProgress/Videoprogress";
+import VideoProgress from "@ui/Videoprogress-lowerback/Videoprogress-lowerback";
 import VideoComponent from "@ui/ui-videocomponent-lowerback/video-component-lowerback";
 
 

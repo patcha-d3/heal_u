@@ -22,6 +22,7 @@ export default function StepTwoPage() {
             width={32}
             height={32}
             className="ml-2"
+            onClick={() => router.push("/blog")}
           />
         </div>
 
@@ -30,7 +31,7 @@ export default function StepTwoPage() {
             Day-2
           </h3>
           <p className="text-lg font-bold mb-12" style={{ color: "#2E2E30" }}>
-            Neck Stretch
+            Lower Back Rolls
           </p>
           <Image
             src="/gif/congratulations.gif"
@@ -46,11 +47,11 @@ export default function StepTwoPage() {
             What's Next?
           </p>
           <div className="flex flex-col w-[320px] space-y-4 ">
-              <Button
+            <Button
               className="w-full py-4 rounded-full font-bold text-lg"
               text="Go to Main"
               outlined
-              onClick={() => router.push("/home")}
+              onClick={() => router.push("/home/lowerback")}
             />
           </div>
         </div>
