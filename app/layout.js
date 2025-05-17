@@ -58,7 +58,8 @@ export default function RootLayout({ children }) {
 		!pathname?.includes("/onboarding") &&
 		!pathname?.startsWith("/recovery-plan/step-one") &&
 		!pathname?.startsWith("/recovery-plan/step-two") &&
-		!pathname?.startsWith("/recovery-plan/step-three");
+		!pathname?.startsWith("/recovery-plan/step-three") &&
+		!pathname?.startsWith("/recovery-plan/step-four");
 	const isStepOne = pathname?.includes("/onboarding/step-one");
 	const isStepTwo = pathname?.includes("/onboarding/step-two");
 	const isRecoveryStepOne = pathname?.includes("/recovery-plan/step-one");

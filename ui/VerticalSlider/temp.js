@@ -1,104 +1,126 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
-import styles from "./Verticalslider.module.css";
+import React, { useState, useEffect } from "react";
 
-export default function Verticalslider({ onChange, value }) {
+const Verticalslider = ({ value, onChange }) => {
 	const [isDragging, setIsDragging] = useState(false);
-	const sliderRef = useRef(null);
-	const [sliderHeight, setSliderHeight] = useState(0);
-	const [sliderTop, setSliderTop] = useState(0);
+	const TRACK_HEIGHT = 400;
+	const THUMB_HEIGHT = 24;
+	const TRACK_PADDING = 12; // Padding to ensure thumb visibility
 
-	const marks = [
-		{ value: 0, label: "0-2 hours" },
-		{ value: 1, label: "3-5 hours" },
-		{ value: 2, label: "6-8 hours" },
-		{ value: 3, label: "9+ hours" },
-	];
-
-	useEffect(() => {
-		if (sliderRef.current) {
-			const height = sliderRef.current.offsetHeight;
-			setSliderHeight(height);
-			setSliderTop(
-				sliderRef.current.getBoundingClientRect().top
-			);
-		}
-	}, []);
+	const calculateValue = (y, rect) => {
+		const percentage = Math.max(
+			0,
+			Math.min(
+				1,
+				y /
+					(TRACK_HEIGHT -
+						THUMB_HEIGHT -
+						2 * TRACK_PADDING)
+			)
+		);
+		return Math.round(percentage * 12); // 0-12 hours
+	};
 
 	const handleMouseDown = (e) => {
+		e.preventDefault();
 		setIsDragging(true);
-		handleDrag(e);
+		updateValue(e);
 	};
 
 	const handleMouseMove = (e) => {
-		if (isDragging) {
-			handleDrag(e);
-		}
+		if (!isDragging) return;
+		e.preventDefault();
+		updateValue(e);
 	};
 
 	const handleMouseUp = () => {
 		setIsDragging(false);
 	};
 
-	const handleDrag = (e) => {
-		if (!sliderRef.current) return;
-
-		const rect = sliderRef.current.getBoundingClientRect();
+	const updateValue = (e) => {
+		const slider = e.currentTarget;
+		const rect = slider.getBoundingClientRect();
 		const y = e.clientY - rect.top;
-		const percentage = Math.max(
-			0,
-			Math.min(1, 1 - y / rect.height)
-		);
-		const value = Math.round(percentage * 3);
-
-		onChange(value);
+		const newValue = calculateValue(y, rect);
+		onChange(newValue);
 	};
 
-	const getPosition = () => {
-		const position = (value / 3) * 100;
-		return `${Math.max(0, Math.min(100, position))}%`;
-	};
+	useEffect(() => {
+		const handleGlobalMouseUp = () => {
+			setIsDragging(false);
+		};
+
+		const handleGlobalMouseMove = (e) => {
+			if (!isDragging) return;
+			const slider =
+				document.getElementById("vertical-slider");
+			if (slider) {
+				const rect = slider.getBoundingClientRect();
+				const y = e.clientY - rect.top;
+				const newValue = calculateValue(y, rect);
+				onChange(newValue);
+			}
+		};
+
+		document.addEventListener("mouseup", handleGlobalMouseUp);
+		document.addEventListener("mousemove", handleGlobalMouseMove);
+		return () => {
+			document.removeEventListener(
+				"mouseup",
+				handleGlobalMouseUp
+			);
+			document.removeEventListener(
+				"mousemove",
+				handleGlobalMouseMove
+			);
+		};
+	}, [isDragging, onChange]);
+
+	// Calculate position in pixels, accounting for thumb height and padding
+	const thumbPosition =
+		(value / 12) *
+			(TRACK_HEIGHT - THUMB_HEIGHT - 2 * TRACK_PADDING) +
+		TRACK_PADDING;
 
 	return (
-		<div
-			ref={sliderRef}
-			className={styles.sliderContainer}
-			onMouseDown={handleMouseDown}
-			onMouseMove={handleMouseMove}
-			onMouseUp={handleMouseUp}
-			onMouseLeave={handleMouseUp}
-		>
-			<div className={styles.sliderTrack}>
+		<div className='relative h-[485px] w-full flex items-center justify-center'>
+			<div
+				id='vertical-slider'
+				className='relative w-8 h-[400px] bg-transparent border-3 border-[#29424d] rounded-2xl overflow-hidden'
+				onMouseDown={handleMouseDown}
+				onMouseUp={handleMouseUp}
+			>
 				<div
-					className={styles.sliderFill}
-					style={{ height: getPosition() }}
-				/>
-				<div
-					className={styles.sliderThumb}
-					style={{ bottom: getPosition() }}
+					className='absolute left-1/2 -translate-x-1/2 w-6 h-6 bg-[#29424d] rounded-full cursor-grab transition-all duration-100 ease-in-out'
+					style={{ top: `${thumbPosition}px` }}
+					onMouseDown={handleMouseDown}
 				/>
 			</div>
-			<div className={styles.marks}>
-				{marks.map((mark) => (
-					<div
-						key={mark.value}
-						className={`${styles.mark} ${
-							value === mark.value
-								? styles.activeMark
-								: ""
-						}`}
-					>
-						<span
-							className={
-								styles.markLabel
-							}
-						>
-							{mark.label}
-						</span>
-					</div>
-				))}
+			<div className='absolute right-[-24px] h-[400px] flex flex-col justify-between'>
+				<div className='flex items-center'>
+					<span className='font-roboto text-xl font-bold text-[#29424d]'>
+						0-2 hours
+					</span>
+				</div>
+				<div className='flex items-center'>
+					<span className='font-roboto text-xl font-bold text-[#29424d]'>
+						3-5 hours
+					</span>
+				</div>
+				<div className='flex items-center'>
+					<span className='font-roboto text-xl font-bold text-[#29424d]'>
+						6-8 hours
+					</span>
+				</div>
+				<div className='flex items-center'>
+					<span className='font-roboto text-xl font-bold text-[#29424d]'>
+						9+ hours
+					</span>
+				</div>
 			</div>
 		</div>
 	);
-}
+};
+
+export default Verticalslider;

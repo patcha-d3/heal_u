@@ -25,7 +25,6 @@ export default function LandingPage() {
 				onClick={() =>
 					router.push("/onboarding/step-one")
 				}
-				className='py-3 w-48'
 			/>
 		</div>
 	);
