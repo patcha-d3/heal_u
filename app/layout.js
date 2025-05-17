@@ -7,8 +7,9 @@ import { usePathname } from "next/navigation";
 import { jsx as _jsxDEV } from "react/jsx-dev-runtime";
 import { Fragment as _Fragment } from "react/jsx-runtime";
 import { jsxs as _jsxsDEV } from "react/jsx-dev-runtime";
-import TopNav from "../ui/Topnav/Topnav";
-import Bottomnav from "../ui/Bottomnav/Bottomnav";
+import TopNav from "@ui/Topnav/Topnav";
+import Bottomnav from "@ui/Bottomnav/Bottomnav";
+import { ThemeProvider, useTheme } from "@context/ThemeContext";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -26,6 +27,29 @@ const roboto = Roboto({
 	display: "swap",
 });
 
+function ThemedContainer({ children }) {
+	const { theme } = useTheme();
+	const pathname = usePathname();
+	const isHome = pathname === "/home";
+	const isStepOne = pathname === "/onboarding/step-one";
+	const bgColor =
+		isHome || isStepOne
+			? "#29424D"
+			: theme === "dark"
+			? "#29424D"
+			: "#FFFFFF";
+	return (
+		<div className='min-h-screen w-full flex items-center justify-center'>
+			<div
+				className={`w-[440px] h-[956px] relative flex flex-col`}
+				style={{ background: bgColor }}
+			>
+				{children}
+			</div>
+		</div>
+	);
+}
+
 export default function RootLayout({ children }) {
 	const pathname = usePathname();
 	const isHome = pathname === "/home";
@@ -34,7 +58,8 @@ export default function RootLayout({ children }) {
 		!pathname?.includes("/onboarding") &&
 		!pathname?.startsWith("/recovery-plan/step-one") &&
 		!pathname?.startsWith("/recovery-plan/step-two") &&
-		!pathname?.startsWith("/recovery-plan/step-three");
+		!pathname?.startsWith("/recovery-plan/step-three") &&
+		!pathname?.startsWith("/recovery-plan/step-four");
 	const isStepOne = pathname?.includes("/onboarding/step-one");
 	const isStepTwo = pathname?.includes("/onboarding/step-two");
 	const isRecoveryStepOne = pathname?.includes("/recovery-plan/step-one");
@@ -48,20 +73,8 @@ export default function RootLayout({ children }) {
 				className={`${geistSans.variable} ${geistMono.variable} ${roboto.className} antialiased`}
 				suppressHydrationWarning
 			>
-				<div className='min-h-screen w-full flex items-center justify-center'>
-					<div
-						className={`w-[440px] h-[956px] relative flex flex-col ${
-							isStepOne || isHome
-								? "bg-[#29424D]"
-								: isStepTwo ||
-								  isStepThree ||
-								  isStepFour ||
-								  isRecoveryStepOne ||
-								  isRecoveryStepTwo
-								? "bg-white"
-								: ""
-						}`}
-					>
+				<ThemeProvider>
+					<ThemedContainer>
 						{!hideNav && (
 							<TopNav
 								isHome={isHome}
@@ -75,8 +88,8 @@ export default function RootLayout({ children }) {
 								<Bottomnav />
 							</div>
 						)}
-					</div>
-				</div>
+					</ThemedContainer>
+				</ThemeProvider>
 			</body>
 		</html>
 	);
