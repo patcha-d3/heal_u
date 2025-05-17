@@ -5,6 +5,10 @@ import styles from "./Painlevelwidget.module.css";
 import Tooltip from "../../ui/Tooltip/Tooltip";
 
 export default function Painlevelwidget() {
+  const handleTooltipClick = () => {
+    alert("Tooltip clicked!");
+  };
+
   return (
     <div className={styles.painLevelWidget}>
       <div className={styles.painLevelColLeft}>
@@ -18,7 +22,10 @@ export default function Painlevelwidget() {
       <div className={styles.painLevelColRight}>
         <div className={styles.painLevelTitleRow}>
           <span className={styles.painLevelTitle}>Today's Pain Level</span>
-          <Tooltip content="This shows your current pain level." />
+          <Tooltip
+            content="This shows your current pain level."
+            onClick={handleTooltipClick}
+          />
         </div>
         <div>
           <span>Neck: <span style={{ color: "#3CB371" }}>3</span></span>
