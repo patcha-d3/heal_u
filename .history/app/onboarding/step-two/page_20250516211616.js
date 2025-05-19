@@ -1,0 +1,117 @@
+"use client";
+
+import React, { useState } from "react";
+import ButtonSurvey from "@ui/Button-survey/Button-survey";
+import Image from "next/image";
+import ExitChip from "@ui/Exitchip/Exitchip";
+import SurveyProgress from "@ui/SurveyProgress/SurveyProgress";
+import ButtonBack from "@ui/Button-back/Button-back";
+import ButtonForward from "@ui/Button-forward/Button-forward";
+import { useRouter } from "next/navigation";
+
+export default function RootPage() {
+	const [selected, setSelected] = useState(null);
+	const currentStep = 4;
+	const totalSteps = 8;
+	const router = useRouter();
+
+	return (
+		<div className='w-[406px] h-[800px] flex flex-col relative'>
+			<ExitChip className='absolute top-[16px] right-[16px]' />
+			<main className='flex-1 flex flex-col px-4 pt-4 pb-2'>
+				<SurveyProgress
+					currentStep={currentStep}
+					totalSteps={totalSteps}
+				/>
+				<h2 className='text-2xl font-semibold text-[#29424D] text-center mt-2 mb-2'>
+					How often do you experience this pain?
+				</h2>
+
+				{/* Image and Button Wrapper */}
+				<div className='flex flex-col items-center gap-3 mt-2'>
+					<Image
+						src='/assets/survey-img.png'
+						alt='Survey'
+						width={320}
+						height={180}
+						className='rounded-lg'
+					/>
+
+					<div className='grid grid-cols-2 gap-2'>
+						<ButtonSurvey
+							label='Daily'
+							active={
+								selected ===
+								"Daily"
+							}
+							onClick={() =>
+								setSelected(
+									"Daily"
+								)
+							}
+						/>
+						<ButtonSurvey
+							label='3-4 times a week'
+							active={
+								selected ===
+								"3-4 times a week"
+							}
+							onClick={() =>
+								setSelected(
+									"3-4 times a week"
+								)
+							}
+						/>
+						<ButtonSurvey
+							label={
+								<>
+									Occasionally
+									<br />
+									(1-2
+									times/week)
+								</>
+							}
+							active={
+								selected ===
+								"Occasionally (1-2 times/week)"
+							}
+							onClick={() =>
+								setSelected(
+									"Occasionally (1-2 times/week)"
+								)
+							}
+						/>
+						<ButtonSurvey
+							label='Rarely'
+							active={
+								selected ===
+								"Rarely"
+							}
+							onClick={() =>
+								setSelected(
+									"Rarely"
+								)
+							}
+						/>
+					</div>
+				</div>
+			</main>
+			<div className='flex justify-between px-[11px] mt-8 mb-4'>
+				<ButtonBack
+					onClick={() =>
+						router.push(
+							"/onboarding/step-one"
+						)
+					}
+				/>
+				<ButtonForward
+					onClick={() =>
+						router.push(
+							"/onboarding/step-four"
+						)
+					}
+				/>
+			</div>
+		</div>
+	);
+}

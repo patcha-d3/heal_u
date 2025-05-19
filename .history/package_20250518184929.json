@@ -1,0 +1,31 @@
+{
+	"homepage": "https://patcha-d3.github.io/heal_u",
+	"name": "heal_u",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"predeploy": "next build",
+		"deploy": "gh-pages -d out",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@svgr/webpack": "^8.1.0",
+		"gensync": "^1.0.0-beta.2",
+		"next": "^15.3.1",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
+		"react-icons": "^5.5.0"
+	},
+	"devDependencies": {
+		"@svgr/webpack": "^8.1.0",
+		"@tailwindcss/postcss": "^4",
+		"@types/node": "22.15.18",
+		"@types/react": "19.1.4",
+		"gh-pages": "^6.3.0",
+		"tailwindcss": "^4",
+		"typescript": "5.8.3"
+	}
+}
