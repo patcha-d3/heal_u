@@ -1,3 +1,12 @@
+## Recorded Videos
+This is the folder containing coded version of the Design-2 project. [Click to view our videos](https://drive.google.com/file/d/1Pq6i_3ANZ6NkothiHCUytgS09XuTneXj/view?usp=share_link)
+![coded](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdWxpZzBqM2g0NG10YzhiMXRiY3ljeWFpY2tmYmJtdmsxY2dvcTE4NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bGgsc5mWoryfgKBx1u/giphy.gif)
+
+-----------
+
+
+
+
 <<<<<<< HEAD
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
